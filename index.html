@@ -11,8 +11,7 @@
         - Work History -> Goal: Organize/Change -> Viz: Vertical Timeline -> Interaction: Click to expand/collapse details -> Justification: Condenses a large amount of text into a clean, interactive format, preventing cognitive overload and allowing users to focus on specific roles. -> Library: HTML/CSS/JS.
         - Skills List -> Goal: Organize/Filter -> Viz: Button-filtered lists -> Interaction: Click buttons to show/hide skill categories -> Justification: Enables users to see only the skills relevant to the role they're hiring for (e.g., Project Management), making the resume feel tailored. -> Library: HTML/CSS/JS.
         - Certifications -> Goal: Inform/Organize -> Viz: Card-based layout -> Interaction: None -> Justification: Presents credentials in a clear, scannable format that is easy to read. -> Library: HTML/CSS.
-        - Portfolio Projects -> Goal: Inform/Showcase -> Viz: Project Cards with Descriptions and Links (now with thumbnails) -> Interaction: Click to view full PDF -> Justification: Provides a visual and textual "preview" of each project, allowing users to quickly grasp the project's essence before deciding to view the full document. Thumbnails enhance visual engagement and quick recognition. -> Library: HTML/CSS/JS.
-    -->
+        - Portfolio Projects -> Goal: Inform/Showcase -> Viz: Project Cards with Descriptions and Links -> Interaction: Click to view full PDF -> Justification: Provides a visual and textual "preview" of each project, allowing users to quickly grasp the project's essence before deciding to view the full document. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -304,7 +303,7 @@
                     description: "Details strategies for effective program delivery, including virtual and in-person facilitation techniques, participant engagement, and feedback mechanisms.",
                     category: "HR Learning & Development",
                     pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_3.pdf",
-                    thumbnailFilename: "Screenshot 2025-07-29 at 2.46.47%20PM.png"
+                    thumbnailFilename: "Screenshot%202025-07-29%20at%202.46.47%20PM.png"
                 },
                 {
                     title: "HR L&D Case Study: Evaluation & Impact",
@@ -385,11 +384,9 @@
 
             const portfolioContainer = document.getElementById('portfolio-container');
             portfolioData.forEach(project => {
-                const thumbnailUrl = `https://pie1011.github.io/resume/docs/thumbnails/${encodeURIComponent(project.thumbnailFilename)}`;
                 const projectCard = document.createElement('div');
                 projectCard.className = 'bg-white p-6 rounded-xl shadow-md flex flex-col';
                 projectCard.innerHTML = `
-                    <img src="${thumbnailUrl}" alt="Thumbnail for ${project.title}" class="w-full h-40 object-cover rounded-t-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x160/F0F0F0/AAAAAA?text=No+Preview';">
                     <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
                     <p class="text-sm text-gray-500 mb-4">${project.category}</p>
                     <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
