@@ -9,8 +9,8 @@
     <!-- Visualization & Content Choices: 
         - Skills Overview -> Goal: Compare -> Viz: Horizontal Bar Chart -> Interaction: Hover for tooltips -> Justification: Provides an immediate, quantitative-feeling overview of core competencies, which is more engaging than a simple text list. -> Library: Chart.js.
         - Work History -> Goal: Organize/Change -> Viz: Vertical Timeline -> Interaction: Click to expand/collapse details -> Justification: Condenses a large amount of text into a clean, interactive format, preventing cognitive overload and allowing users to focus on specific roles. -> Library/Method: HTML/CSS/JS.
-        - Skills List -> Goal: Organize/Filter -> Viz: Button-filtered lists -> Interaction: Click buttons to show/hide skill categories -> Justification: Enables users to see only the skills relevant to the role they're hiring for (e.g., Project Management), making the resume feel tailored. -> Library/Method: HTML/CSS/JS.
-        - Certifications -> Goal: Inform/Organize -> Viz: Card-based layout -> Interaction: None -> Justification: Presents credentials in a clear, scannable format that is easy to read. -> Library/Method: HTML/CSS.
+        - Skills List -> Goal: Organize/Filter -> Viz: Button-filtered lists -> Interaction: Click buttons to show/hide skill categories -> Justification: Enables users to see only the skills relevant to the role they're hiring for (e.g., Project Management), making the resume feel tailored. -> Library: HTML/CSS/JS.
+        - Certifications -> Goal: Inform/Organize -> Viz: Card-based layout -> Interaction: None -> Justification: Presents credentials in a clear, scannable format that is easy to read. -> Library: HTML/CSS.
         - Portfolio Projects -> Goal: Inform/Showcase -> Viz: Project Cards with Descriptions and Links -> Interaction: Click to view full PDF -> Justification: Provides a visual and textual "preview" of each project, allowing users to quickly grasp the project's essence before deciding to view the full document. This is the most practical approach for PDF previews within the single HTML file constraint without server-side rendering or complex external PDF rendering libraries. -> Library: HTML/CSS/JS.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
@@ -40,7 +40,7 @@
             padding: 0 1rem;
         }
         .timeline-item-content.open {
-            max-height: 500px;
+            max-height: 500px; /* Adjusted max-height for timeline */
             padding: 1rem 1rem;
         }
         .skill-button.active {
@@ -66,8 +66,8 @@
                 <a href="#overview" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Overview</a>
                 <a href="#experience" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Experience</a>
                 <a href="#skills" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Skills</a>
-                <a href="#portfolio" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Portfolio</a>
                 <a href="#education" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Education</a>
+                <a href="#portfolio" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Portfolio</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
@@ -79,8 +79,8 @@
             <a href="#overview" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Overview</a>
             <a href="#experience" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Experience</a>
             <a href="#skills" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Skills</a>
-            <a href="#portfolio" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Portfolio</a>
             <a href="#education" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Education</a>
+            <a href="#portfolio" class="block text-center py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Portfolio</a>
         </div>
     </header>
 
@@ -129,15 +129,7 @@
             </div>
         </section>
 
-        <section id="portfolio" class="mb-16 scroll-mt-20">
-            <h3 class="text-3xl font-bold text-center mb-4 text-[#3D405B]">Portfolio Projects</h3>
-            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">Explore a selection of my Project Management and HR Learning & Development work. Each card provides a brief overview, and you can click "View Full Project" to open the detailed PDF document in a new tab.</p>
-            <div id="portfolio-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio project cards will be injected here by JavaScript -->
-            </div>
-        </section>
-
-        <section id="education" class="scroll-mt-20">
+        <section id="education" class="mb-16 scroll-mt-20">
             <h3 class="text-3xl font-bold text-center mb-10 text-[#3D405B]">Education & Certifications</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-md">
@@ -165,6 +157,16 @@
                         <li><span class="font-semibold">Freecodecamp:</span> Responsive Web Design, JS Algorithms</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="mb-16 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-4 text-[#3D405B]">
+                Portfolio Projects
+            </h3>
+            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">Explore a selection of my Project Management and HR Learning & Development work. Each card provides a brief overview, and you can click "View Full Project" to open the detailed PDF document in a new tab.</p>
+            <div id="portfolio-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio project cards will be injected here by JavaScript -->
             </div>
         </section>
 
@@ -473,17 +475,28 @@
             const sections = document.querySelectorAll('main section');
 
             const activateNavLink = () => {
-                let index = sections.length;
-                while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
-                
-                navLinks.forEach((link) => link.classList.remove('active'));
-                if(index > -1 && navLinks[index]){
-                   navLinks[index].classList.add('active');
-                }
+                let currentActive = '';
+                // Adjust offset for better active state detection
+                const offset = 150; 
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    if (window.scrollY + offset >= sectionTop && window.scrollY + offset < sectionBottom) {
+                        currentActive = section.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === currentActive) {
+                        link.classList.add('active');
+                    }
+                });
             };
             
             window.addEventListener('scroll', activateNavLink);
-            activateNavLink();
+            activateNavLink(); // Call on load to set initial active link
 
         });
     </script>
