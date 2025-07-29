@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katie Harshman | Interactive Resume</title>
-    <!-- Chosen Palette: Professional Calm -->
+    <!-- Chosen Palette: Professional Calm (with Teal and Pinkish Coral Accents) -->
     <!-- Application Structure Plan: A single-page application with a top navigation bar allowing users to jump to different thematic sections: an 'Overview' with a skills chart, an interactive 'Experience' timeline, a filterable 'Skills' explorer, a clean 'Education' section, and a new 'Portfolio' section. This structure was chosen to allow busy recruiters to quickly access the information most relevant to them, breaking down the traditional resume into digestible, interactive chunks. The flow encourages exploration rather than a linear read-through, enhancing usability. -->
     <!-- Visualization & Content Choices: 
         - Skills Overview -> Goal: Compare -> Viz: Horizontal Bar Chart -> Interaction: Hover for tooltips -> Justification: Provides an immediate, quantitative-feeling overview of core competencies, which is more engaging than a simple text list. -> Library: Chart.js.
         - Work History -> Goal: Organize/Change -> Viz: Vertical Timeline -> Interaction: Click to expand/collapse details -> Justification: Condenses a large amount of text into a clean, interactive format, preventing cognitive overload and allowing users to focus on specific roles. -> Library/Method: HTML/CSS/JS.
         - Skills List -> Goal: Organize/Filter -> Viz: Button-filtered lists -> Interaction: Click buttons to show/hide skill categories -> Justification: Enables users to see only the skills relevant to the role they're hiring for (e.g., Project Management), making the resume feel tailored. -> Library/Method: HTML/CSS/JS.
         - Certifications -> Goal: Inform/Organize -> Viz: Card-based layout -> Interaction: None -> Justification: Presents credentials in a clear, scannable format that is easy to read. -> Library/Method: HTML/CSS.
-        - Portfolio Projects -> Goal: Inform/Showcase -> Viz: Project Cards with Descriptions and Links -> Interaction: Click to view full PDF -> Justification: Provides a visual and textual "preview" of each project, allowing users to quickly grasp the project's essence before deciding to view the full document. This is the most practical approach for PDF previews within the single HTML file constraint without server-side rendering or complex external PDF rendering libraries. -> Library/Method: HTML/CSS/JS.
+        - Portfolio Projects -> Goal: Inform/Showcase -> Viz: Project Cards with Descriptions and Links -> Interaction: Click to view full PDF -> Justification: Provides a visual and textual "preview" of each project, allowing users to quickly grasp the project's essence before deciding to view the full document. This is the most practical approach for PDF previews within the single HTML file constraint without server-side rendering or complex external PDF rendering libraries. -> Library: HTML/CSS/JS.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,8 +30,8 @@
             transition: color 0.3s, border-bottom-color 0.3s;
         }
         .nav-link:hover, .nav-link.active {
-            color: #81B29A;
-            border-bottom-color: #81B29A;
+            color: #20B2AA; /* Teal accent */
+            border-bottom-color: #20B2AA; /* Teal accent */
         }
         .timeline-item-content {
             max-height: 0;
@@ -44,7 +44,7 @@
             padding: 1rem 1rem;
         }
         .skill-button.active {
-            background-color: #81B29A;
+            background-color: #20B2AA; /* Teal accent */
             color: #FFFFFF;
         }
         .chart-container {
@@ -90,10 +90,10 @@
             <h2 class="text-4xl md:text-5xl font-bold text-[#3D405B] mb-4">Katie Harshman</h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto">Project Coordination | Administrative Support | Technical Instruction</p>
             <div class="flex justify-center items-center space-x-6 mt-6 text-gray-500">
-                <a href="mailto:katieharshman1011@gmail.com" class="hover:text-[#81B29A] transition-colors"><i class="fas fa-envelope mr-2"></i>Email</a>
-                <a href="https://www.linkedin.com/in/pie1011" target="_blank" rel="noopener noreferrer" class="hover:text-[#81B29A] transition-colors"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
-                <a href="https://www.katieharshman.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#81B29A] transition-colors"><i class="fas fa-globe mr-2"></i>Website</a>
-                <a href="https://trailblazer.me/id/katharineharshman" target="_blank" rel="noopener noreferrer" class="hover:text-[#81B29A] transition-colors"><i class="fab fa-salesforce mr-2"></i>Salesforce</a>
+                <a href="mailto:katieharshman1011@gmail.com" class="hover:text-[#20B2AA] transition-colors"><i class="fas fa-envelope mr-2"></i>Email</a>
+                <a href="https://www.linkedin.com/in/pie1011" target="_blank" rel="noopener noreferrer" class="hover:text-[#20B2AA] transition-colors"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                <a href="https://www.katieharshman.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#20B2AA] transition-colors"><i class="fas fa-globe mr-2"></i>Website</a>
+                <a href="https://trailblazer.me/id/katharineharshman" target="_blank" rel="noopener noreferrer" class="hover:text-[#20B2AA] transition-colors"><i class="fab fa-salesforce mr-2"></i>Salesforce</a>
             </div>
         </section>
 
@@ -242,40 +242,70 @@
 
             const portfolioData = [
                 {
-                    title: "Project Initiation & Planning (Assessment 02)",
+                    title: "Project Initiation & Planning",
                     description: "Details the initial phase of a project, including defining scope, objectives, and key deliverables. Focuses on stakeholder identification and preliminary planning.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 02.pdf" 
                 },
                 {
-                    title: "Project Schedule Development (Assessment 03)",
+                    title: "Project Schedule Development",
                     description: "Outlines the creation of a detailed project schedule, including task breakdown, dependencies, and critical path analysis. Demonstrates proficiency in timeline management.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 03.pdf"
                 },
                 {
-                    title: "Cost Management & Budgeting (Assessment 04)",
+                    title: "Cost Management & Budgeting",
                     description: "Presents a comprehensive project budget, cost estimation techniques, and financial tracking mechanisms. Highlights skills in resource allocation and fiscal oversight.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 04.pdf"
                 },
                 {
-                    title: "Risk Management Plan (Assessment 05)",
+                    title: "Risk Management Plan",
                     description: "Details a structured approach to identifying, assessing, and mitigating potential project risks. Showcases proactive problem-solving and contingency planning.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 05.pdf"
                 },
                 {
-                    title: "Stakeholder Engagement & Communication (Assessment 13)",
+                    title: "Stakeholder Engagement & Communication",
                     description: "Illustrates strategies for effective stakeholder identification, analysis, and communication planning. Emphasizes building strong relationships and managing expectations.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 13.pdf"
                 },
                 {
-                    title: "Project Closure & Lessons Learned (Assessment 16)",
+                    title: "Project Closure & Lessons Learned",
                     description: "Covers the final stages of a project, including formal closure, performance review, and documentation of lessons learned for future improvements.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 16.pdf"
+                },
+                {
+                    title: "HR L&D Case Study: Program Design",
+                    description: "Analyzes a real-world HR challenge and proposes a structured learning and development program solution, including needs assessment and learning objectives.",
+                    category: "HR Learning & Development",
+                    pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_01.pdf"
+                },
+                {
+                    title: "HR L&D Case Study: Content Development",
+                    description: "Showcases the development of engaging learning content, including instructional materials, activities, and assessments tailored to adult learners.",
+                    category: "HR Learning & Development",
+                    pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_02.pdf"
+                },
+                {
+                    title: "HR L&D Case Study: Delivery & Facilitation",
+                    description: "Details strategies for effective program delivery, including virtual and in-person facilitation techniques, participant engagement, and feedback mechanisms.",
+                    category: "HR Learning & Development",
+                    pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_03.pdf"
+                },
+                {
+                    title: "HR L&D Case Study: Evaluation & Impact",
+                    description: "Presents methods for evaluating the effectiveness of learning programs, including data collection, analysis, and reporting on ROI and learner outcomes.",
+                    category: "HR Learning & Development",
+                    pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_04.pdf"
+                },
+                {
+                    title: "HR L&D Case Study: Continuous Improvement",
+                    description: "Focuses on strategies for iterating and improving learning programs based on feedback and performance data, ensuring long-term relevance and effectiveness.",
+                    category: "HR Learning & Development",
+                    pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_05.pdf"
                 }
             ];
 
@@ -287,7 +317,7 @@
                 const listItems = job.details.map(detail => `<li class="text-gray-600">${detail}</li>`).join('');
 
                 item.innerHTML = `
-                    <div class="absolute -left-1.5 mt-1.5 w-3 h-3 bg-[#81B29A] rounded-full"></div>
+                    <div class="absolute -left-1.5 mt-1.5 w-3 h-3 bg-[#20B2AA] rounded-full"></div>
                     <div class="p-4 bg-white rounded-lg shadow-sm cursor-pointer timeline-item-header">
                         <time class="text-sm font-normal text-gray-400">${job.dates}</time>
                         <h4 class="text-lg font-semibold text-[#3D405B]">${job.role}</h4>
@@ -348,7 +378,7 @@
                     <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
                     <p class="text-sm text-gray-500 mb-4">${project.category}</p>
                     <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
-                    <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block bg-[#81B29A] text-white text-center py-2 px-4 rounded-md hover:bg-[#6A9B7D] transition-colors">
+                    <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block bg-[#${project.category === 'HR Learning & Development' ? 'ED7E6F' : '20B2AA'}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${project.category === 'HR Learning & Development' ? 'E76F51' : '008080'}] transition-colors">
                         View Full Project <i class="fas fa-external-link-alt ml-2"></i>
                     </a>
                 `;
@@ -364,16 +394,16 @@
                         label: 'Skill Proficiency Level',
                         data: [90, 85, 80, 95],
                         backgroundColor: [
-                            'rgba(129, 178, 154, 0.6)',
-                            'rgba(224, 195, 160, 0.6)',
-                            'rgba(244, 162, 97, 0.6)',
-                            'rgba(61, 64, 91, 0.6)'
+                            'rgba(32, 178, 170, 0.6)', /* Teal for Project Management */
+                            'rgba(237, 126, 111, 0.6)', /* Pinkish Coral for Admin Support */
+                            'rgba(224, 195, 160, 0.6)', /* Original calm neutral */
+                            'rgba(0, 128, 128, 0.6)' /* Darker Teal for Communication & Training */
                         ],
                         borderColor: [
-                            '#81B29A',
+                            '#20B2AA', /* Teal for Project Management */
+                            '#ED7E6F', /* Pinkish Coral for Admin Support */
                             '#E0C3A0',
-                            '#F4A261',
-                            '#3D405B'
+                            '#008080' /* Darker Teal for Communication & Training */
                         ],
                         borderWidth: 1
                     }]
