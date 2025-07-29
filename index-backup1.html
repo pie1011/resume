@@ -8,11 +8,10 @@
     <!-- Application Structure Plan: A single-page application with a top navigation bar allowing users to jump to different thematic sections: an 'Overview' with a skills chart, an interactive 'Experience' timeline, a filterable 'Skills' explorer, a clean 'Education' section, and a new 'Portfolio' section. This structure was chosen to allow busy recruiters to quickly access the information most relevant to them, breaking down the traditional resume into digestible, interactive chunks. The flow encourages exploration rather than a linear read-through, enhancing usability. -->
     <!-- Visualization & Content Choices: 
         - Skills Overview -> Goal: Compare -> Viz: Horizontal Bar Chart -> Interaction: Hover for tooltips -> Justification: Provides an immediate, quantitative-feeling overview of core competencies, which is more engaging than a simple text list. -> Library: Chart.js.
-        - Work History -> Goal: Organize/Change -> Viz: Vertical Timeline -> Interaction: Click to expand/collapse details -> Justification: Condenses a large amount of text into a clean, interactive format, preventing cognitive overload and allowing users to focus on specific roles. -> Library/Method: HTML/CSS/JS.
+        - Work History -> Goal: Organize/Change -> Viz: Vertical Timeline -> Interaction: Click to expand/collapse details -> Justification: Condenses a large amount of text into a clean, interactive format, preventing cognitive overload and allowing users to focus on specific roles. -> Library: HTML/CSS/JS.
         - Skills List -> Goal: Organize/Filter -> Viz: Button-filtered lists -> Interaction: Click buttons to show/hide skill categories -> Justification: Enables users to see only the skills relevant to the role they're hiring for (e.g., Project Management), making the resume feel tailored. -> Library: HTML/CSS/JS.
         - Certifications -> Goal: Inform/Organize -> Viz: Card-based layout -> Interaction: None -> Justification: Presents credentials in a clear, scannable format that is easy to read. -> Library: HTML/CSS.
-        - Portfolio Projects -> Goal: Inform/Showcase -> Viz: Project Cards with Descriptions and Links -> Interaction: Click to view full PDF -> Justification: Provides a visual and textual "preview" of each project, allowing users to quickly grasp the project's essence before deciding to view the full document. This is the most practical approach for PDF previews within the single HTML file constraint without server-side rendering or complex external PDF rendering libraries. -> Library: HTML/CSS/JS.
-    -->
+        - Portfolio Projects -> Goal: Inform/Showcase -> Viz: Project Cards with Descriptions and Links -> Interaction: Click to view full PDF -> Justification: Provides a visual and textual "preview" of each project, allowing users to quickly grasp the project's essence before deciding to view the full document. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -202,6 +201,17 @@
                     ]
                 },
                 {
+                    role: "Software Engineer Apprentice",
+                    company: "IBM",
+                    dates: "Apr 2022 – Apr 2023",
+                    details: [
+                        "Led two teams in the Developer Jumpstart program, contributing to the creation of advanced workshop materials.",
+                        "Collaborated with senior engineers in the Data and AI unit to develop tools that enhanced IBM Content Designers' workflow, utilizing JavaScript and Python within Agile methodologies.",
+                        "Contributed to technical documentation, streamlining information accessibility and clarity.",
+                        "Mentored junior developers and participated in coursework to strengthen competencies."
+                    ]
+                },
+                {
                     role: "Co-Founder and Operations Manager",
                     company: "Pro Appliance Installation",
                     dates: "Apr 2016 – Apr 2022",
@@ -233,68 +243,68 @@
 
             const portfolioData = [
                 {
-                    title: "Project Initiation & Planning",
-                    description: "Details the initial phase of a project, including defining scope, objectives, and key deliverables. Focuses on stakeholder identification and preliminary planning.",
+                    title: "Project Management Framework Report",
+                    description: "Presents a comprehensive framework for project management, detailing foundational principles and initial planning stages.",
                     category: "Project Management",
-                    pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 02.pdf" 
+                    pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 02.pdf"
                 },
                 {
-                    title: "Project Schedule Development",
-                    description: "Outlines the creation of a detailed project schedule, including task breakdown, dependencies, and critical path analysis. Demonstrates proficiency in timeline management.",
+                    title: "Organizational Culture Report",
+                    description: "An analysis of organizational culture, identifying key areas for improvement and alignment with strategic goals.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 03.pdf"
                 },
                 {
-                    title: "Cost Management & Budgeting",
-                    description: "Presents a comprehensive project budget, cost estimation techniques, and financial tracking mechanisms. Highlights skills in resource allocation and fiscal oversight.",
+                    title: "Methodology Analysis",
+                    description: "A detailed analysis of consulting methodologies, focusing on their application and effectiveness in various client scenarios.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 04.pdf"
                 },
                 {
-                    title: "Risk Management Plan",
-                    description: "Details a structured approach to identifying, assessing, and mitigating potential project risks. Showcases proactive problem-solving and contingency planning.",
+                    title: "Project Charter, Initiation Phase",
+                    description: "Outlines the project's purpose, objectives, and scope, formally authorizing the project and establishing key stakeholders.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 05.pdf"
                 },
                 {
-                    title: "Stakeholder Engagement & Communication",
-                    description: "Illustrates strategies for effective stakeholder identification, analysis, and communication planning. Emphasizes building strong relationships and managing expectations.",
+                    title: "Project Documentation",
+                    description: "Details the process of creating and maintaining essential project documents and tracking progress against established plans.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 13.pdf"
                 },
                 {
-                    title: "Project Closure & Lessons Learned",
-                    description: "Covers the final stages of a project, including formal closure, performance review, and documentation of lessons learned for future improvements.",
+                    title: "Project Plan",
+                    description: "A detailed plan covering all aspects of project execution, including scope, schedule, resources, and communication strategies.",
                     category: "Project Management",
                     pdfUrl: "https://pie1011.github.io/resume/docs/KHarshman-Summative Assessment 16.pdf"
                 },
                 {
-                    title: "HR L&D Case Study: Program Design",
-                    description: "Analyzes a real-world HR challenge and proposes a structured learning and development program solution, including needs assessment and learning objectives.",
+                    title: "Learning Organization Implementation Plan",
+                    description: "Proposes strategies and initiatives to foster a continuous learning environment within an organization.",
                     category: "HR Learning & Development",
                     pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_1.pdf"
                 },
                 {
-                    title: "HR L&D Case Study: Content Development",
-                    description: "Showcases the development of engaging learning content, including instructional materials, activities, and assessments tailored to adult learners.",
+                    title: "Continuous Learning Strategies: Problem-Solving",
+                    description: "Explores methodologies and approaches for integrating continuous learning into organizational problem-solving processes.",
                     category: "HR Learning & Development",
                     pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_2.pdf"
                 },
                 {
-                    title: "HR L&D Case Study: Delivery & Facilitation",
-                    description: "Details strategies for effective program delivery, including virtual and in-person facilitation techniques, participant engagement, and feedback mechanisms.",
+                    title: "Program Evaluation and Proposal",
+                    description: "A comprehensive evaluation of an existing learning and development program, with proposals for enhancements and future initiatives.",
                     category: "HR Learning & Development",
                     pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_3.pdf"
                 },
                 {
-                    title: "HR L&D Case Study: Evaluation & Impact",
-                    description: "Presents methods for evaluating the effectiveness of learning programs, including data collection, analysis, and reporting on ROI and learner outcomes.",
+                    title: "Digital Learning Strategy Proposal",
+                    description: "Proposes a strategic roadmap for implementing and optimizing digital learning solutions within an organization.",
                     category: "HR Learning & Development",
                     pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_4.pdf"
                 },
                 {
-                    title: "HR L&D Case Study: Continuous Improvement",
-                    description: "Focuses on strategies for iterating and improving learning programs based on feedback and performance data, ensuring long-term relevance and effectiveness.",
+                    title: "Coaching Program Proposal",
+                    description: "Outlines a structured coaching program designed to enhance employee performance and professional development.",
                     category: "HR Learning & Development",
                     pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_5.pdf"
                 }
@@ -363,6 +373,7 @@
 
             const portfolioContainer = document.getElementById('portfolio-container');
             portfolioData.forEach(project => {
+                // No thumbnail image displayed as per request
                 const projectCard = document.createElement('div');
                 projectCard.className = 'bg-white p-6 rounded-xl shadow-md flex flex-col';
                 projectCard.innerHTML = `
