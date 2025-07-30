@@ -269,19 +269,19 @@
             };
 
             const portfolioData = [
-                // --- New Portfolio Cards (moved to top) ---
+                // ---  Portfolio Cards  ---
                 {
                     title: "React Portfolio Website",
-                    description: "A personal portfolio website built with React, showcasing projects and skills with a modern, responsive design.",
+                    description: "A personal portfolio website built with React, showcasing projects and skills with a modern, responsive design (links to live React site hosted at Netlify).",
                     category: "Web Development",
-                    pdfUrl: "https://pie1011.github.io/resume/docs/react_portfolio_website.pdf",
+                    pdfUrl: "katie-harshman-portfolio.netlify.app",
                     thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/12.png"
                 },
                 {
                     title: "The Salon Mock Site in React",
-                    description: "A mock salon website developed in React, demonstrating component-based architecture and interactive UI features.",
+                    description: "A mock salon website developed in React, demonstrating component-based architecture and interactive UI features (links to live React react hosted at vercel.app).",
                     category: "Web Development",
-                    pdfUrl: "https://pie1011.github.io/resume/docs/salon_mock_site.pdf",
+                    pdfUrl: "https://salon-kh.vercel.app/",
                     thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/13.png"
                 },
                 {
@@ -438,7 +438,9 @@
                     accent = '20B2AA'; hover = '008080'; // Teal
                 }
                 projectCard.innerHTML = `
-                    <img src="${project.thumbnailUrl}" alt="${project.title} thumbnail" class="mb-4 rounded-lg object-cover w-full h-40">
+                    <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer">
+                        <img src="${project.thumbnailUrl}" alt="${project.title} thumbnail" class="mb-4 rounded-lg object-cover w-full h-56 hover:opacity-80 transition-opacity">
+                    </a>
                     <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
                     <p class="text-sm text-gray-500 mb-4">${project.category}</p>
                     <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
