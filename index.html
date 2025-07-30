@@ -14,6 +14,9 @@
         - Portfolio Projects -> Goal: Inform/Showcase -> Viz: Project Cards with Descriptions and Links -> Interaction: Click to view full PDF -> Justification: Provides a visual and textual "preview" of each project, allowing users to quickly grasp the project's essence before deciding to view the full document. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <link rel="stylesheet" href="output.css">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -266,6 +269,21 @@
             };
 
             const portfolioData = [
+                // --- New Portfolio Cards (moved to top) ---
+                {
+                    title: "React Portfolio Website",
+                    description: "A personal portfolio website built with React, showcasing projects and skills with a modern, responsive design.",
+                    category: "Web Development",
+                    pdfUrl: "https://pie1011.github.io/resume/docs/react_portfolio_website.pdf",
+                    thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/12.png"
+                },
+                {
+                    title: "The Salon Mock Site in React",
+                    description: "A mock salon website developed in React, demonstrating component-based architecture and interactive UI features.",
+                    category: "Web Development",
+                    pdfUrl: "https://pie1011.github.io/resume/docs/salon_mock_site.pdf",
+                    thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/13.png"
+                },
                 {
                     title: "Project Management Framework Report",
                     description: "Presents a comprehensive framework for project management, detailing foundational principles and initial planning stages.",
@@ -410,12 +428,21 @@
             portfolioData.forEach(project => {
                 const projectCard = document.createElement('div');
                 projectCard.className = 'bg-white p-6 rounded-xl shadow-md flex flex-col';
+                // Accent color logic
+                let accent, hover;
+                if (project.category === 'HR Learning & Development') {
+                    accent = 'ED7E6F'; hover = 'E76F51'; // Coral
+                } else if (project.category === 'Web Development') {
+                    accent = '3498DB'; hover = '217DBB'; // Blue
+                } else {
+                    accent = '20B2AA'; hover = '008080'; // Teal
+                }
                 projectCard.innerHTML = `
                     <img src="${project.thumbnailUrl}" alt="${project.title} thumbnail" class="mb-4 rounded-lg object-cover w-full h-40">
                     <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
                     <p class="text-sm text-gray-500 mb-4">${project.category}</p>
                     <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
-                    <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block bg-[#${project.category === 'HR Learning & Development' ? 'ED7E6F' : '20B2AA'}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${project.category === 'HR Learning & Development' ? 'E76F51' : '008080'}] transition-colors">
+                    <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors">
                         View Full Project <i class="fas fa-external-link-alt ml-2"></i>
                     </a>
                 `;
