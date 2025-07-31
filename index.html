@@ -284,7 +284,7 @@
                     title: "React Portfolio Website",
                     description: "A personal portfolio website built with React, showcasing projects and skills with a modern, responsive design (links to live React site hosted at Netlify).",
                     category: "Web Development",
-                    pdfUrl: "katie-harshman-portfolio.netlify.app",
+                    pdfUrl: "https://katie-harshman-portfolio.netlify.app",
                     thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/12.png",
                     githubUrl: "https://github.com/pie1011/portfolio"
                 },
@@ -449,23 +449,37 @@
                 } else {
                     accent = '20B2AA'; hover = '008080'; // Teal
                 }
+                // Button rendering logic for first two cards
+                let buttonsHtml = '';
+                if (project.githubUrl) {
+                    buttonsHtml = `
+                        <div class="mt-auto flex gap-2">
+                            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
+                               class="flex-1 inline-block bg-gray-800 text-white text-center py-2 px-4 rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
+                            <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
+                               class="flex-1 inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors flex items-center justify-center">
+                                View Site <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    `;
+                } else {
+                    buttonsHtml = `
+                        <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
+                           class="mt-auto inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors">
+                            View Full Project <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    `;
+                }
                 projectCard.innerHTML = `
                     <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer">
                         <img src="${project.thumbnailUrl}" alt="${project.title} thumbnail" class="mb-4 rounded-lg object-cover w-full h-56 hover:opacity-80 transition-opacity">
                     </a>
                     <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
                     <p class="text-sm text-gray-500 mb-4">${project.category}</p>
-                    <p class="text-gray-600 flex-grow mb-2">${project.description}</p>
-                    ${
-                        project.githubUrl
-                        ? `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-block text-gray-500 hover:text-[#20B2AA] mb-4 transition-colors" title="View on GitHub">
-                            <i class="fab fa-github fa-lg"></i> <span class="sr-only">GitHub</span>
-                        </a>`
-                        : '<div class="mb-4"></div>'
-                    }
-                    <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors">
-                        View Full Project <i class="fas fa-external-link-alt ml-2"></i>
-                    </a>
+                    <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
+                    ${buttonsHtml}
                 `;
                 portfolioContainer.appendChild(projectCard);
             });
