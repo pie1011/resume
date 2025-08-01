@@ -483,7 +483,7 @@
             });
             // Helper to render cards
             function renderPortfolioCards(projects, container) {
-                projects.forEach(project => {
+                projects.forEach((project, idx) => {
                     const projectCard = document.createElement('div');
                     projectCard.className = 'bg-white p-6 rounded-xl shadow-md flex flex-col';
                     // Accent color logic
@@ -518,10 +518,33 @@
                             </a>
                         `;
                     }
+                    // HR L&D subhead logic
+                    let subhead = '';
+                    if (project.category === 'HR Learning & Development') {
+                        // First five HR cards: "Case Study: Precision Installations Co." in dark blue
+                        // Last HR card: "Case Study: KEdTech Solutions" in dark blue
+                        // Determine if this is the last HR card by checking idx in hrProjects
+                        let hrLabel = '';
+                        let color = '#3D405B'; // dark blue
+                        // Find out if this is the last HR card
+                        // We need to know the total count of HR cards and the index within hrProjects
+                        // We'll use the hrProjects array from the closure
+                        let isLastHR = false;
+                        if (container === portfolioContainerHR) {
+                            isLastHR = (idx === hrProjects.length - 1);
+                        }
+                        if (isLastHR) {
+                            hrLabel = 'Case Study: KEdTech Solutions';
+                        } else {
+                            hrLabel = 'Case Study: Precision Installations Co.';
+                        }
+                        subhead = `<div class="text-sm font-semibold mb-1" style="color:${color}">${hrLabel}</div>`;
+                    }
                     projectCard.innerHTML = `
                         <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer">
                             <img src="${project.thumbnailUrl}" alt="${project.title} thumbnail" class="mb-4 rounded-lg object-cover w-full h-56 hover:opacity-80 transition-opacity">
                         </a>
+                        ${subhead}
                         <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
                         <p class="text-sm text-gray-500 mb-4">${project.category}</p>
                         <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
