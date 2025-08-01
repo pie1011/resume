@@ -171,26 +171,33 @@
             <h3 class="text-3xl font-bold text-center mb-4 text-[#3D405B]">
                 Portfolio Projects
             </h3>
-            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">Explore a selection of my Project Management, Web Development, and HR Learning & Development work. Each card provides a brief overview, and you can click "View Full Project" to open the detailed PDF document (or site link) in a new tab.</p>
+            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">Explore a selection of my Project Management, HR Learning & Development, and Web Development work. Each card provides a brief overview, and you can click "View Full Project" to open the detailed PDF document (or site link) in a new tab.</p>
             <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">
                 <i>
                     Please note: Aside from my personal portfolio site, all company names, scenarios, and organizational details presented in this portfolio are entirely fictitious and created for educational purposes. Any resemblance to real companies, individuals, or events is purely coincidental.
                 </i>
             </p>
             <div class="flex justify-center gap-4 mb-8">
-                <a href="#portfolio-web" class="px-6 py-2 rounded-full bg-[#3498DB] text-white font-medium hover:bg-[#217DBB] transition-colors">Web Development & Project Management</a>
+                <a href="#portfolio-pm" class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Project Management</a>
                 <a href="#portfolio-hr" class="px-6 py-2 rounded-full bg-[#ED7E6F] text-white font-medium hover:bg-[#E76F51] transition-colors">HR Learning & Development</a>
+                <a href="#portfolio-web" class="px-6 py-2 rounded-full bg-[#3498DB] text-white font-medium hover:bg-[#217DBB] transition-colors">Web Development</a>
             </div>
             <div>
-                <h4 id="portfolio-web" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">Web Development & Project Management</h4>
-                <div id="portfolio-container-web" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <!-- Web Dev & Project Management cards injected here -->
+                <h4 id="portfolio-pm" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">Project Management</h4>
+                <div id="portfolio-container-pm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Project Management cards injected here -->
                 </div>
             </div>
             <div>
                 <h4 id="portfolio-hr" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">HR Learning & Development</h4>
-                <div id="portfolio-container-hr" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div id="portfolio-container-hr" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     <!-- HR L&D cards injected here -->
+                </div>
+            </div>
+            <div>
+                <h4 id="portfolio-web" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">Web Development</h4>
+                <div id="portfolio-container-web" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Web Dev cards injected here -->
                 </div>
             </div>
         </section>
@@ -296,22 +303,6 @@
             const portfolioData = [
                 // ---  Portfolio Cards  ---
                 {
-                    title: "React Portfolio Website",
-                    description: "A personal portfolio website built with React, showcasing projects and skills with a modern, responsive design (links to live React site hosted at Netlify).",
-                    category: "Web Development",
-                    pdfUrl: "https://katie-harshman-portfolio.netlify.app",
-                    thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/12.png",
-                    githubUrl: "https://github.com/pie1011/portfolio"
-                },
-                {
-                    title: "The Salon Mock Site in React",
-                    description: "A mock salon website developed in React, demonstrating component-based architecture and interactive UI features (links to live React react hosted at vercel.app).",
-                    category: "Web Development",
-                    pdfUrl: "https://salon-kh.vercel.app/",
-                    thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/13.png",
-                    githubUrl: "https://github.com/pie1011/salon"
-                },
-                {
                     title: "Project Management Framework Report",
                     description: "Presents a comprehensive framework for project management, detailing foundational principles and initial planning stages.",
                     category: "Project Management",
@@ -394,6 +385,22 @@
                     category: "HR Learning & Development",
                     pdfUrl: "https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_6.pdf",
                     thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/14.png"
+                },
+                {
+                    title: "React Portfolio Website",
+                    description: "A personal portfolio website built with React, showcasing projects and skills with a modern, responsive design (links to live React site hosted at Netlify).",
+                    category: "Web Development",
+                    pdfUrl: "https://katie-harshman-portfolio.netlify.app",
+                    thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/12.png",
+                    githubUrl: "https://github.com/pie1011/portfolio"
+                },
+                {
+                    title: "The Salon Mock Site in React",
+                    description: "A mock salon website developed in React, demonstrating component-based architecture and interactive UI features (links to live React react hosted at vercel.app).",
+                    category: "Web Development",
+                    pdfUrl: "https://salon-kh.vercel.app/",
+                    thumbnailUrl: "https://pie1011.github.io/resume/docs/thumbnails/13.png",
+                    githubUrl: "https://github.com/pie1011/salon"
                 }
             ];
 
@@ -459,59 +466,94 @@
             renderSkills(categories[0]);
 
             // Split portfolio cards by category
-            const portfolioContainerWeb = document.getElementById('portfolio-container-web');
+            const portfolioContainerPM = document.getElementById('portfolio-container-pm');
             const portfolioContainerHR = document.getElementById('portfolio-container-hr');
+            const portfolioContainerWeb = document.getElementById('portfolio-container-web');
+            // Separate arrays for each section
+            const pmProjects = [];
+            const hrProjects = [];
+            const webProjects = [];
             portfolioData.forEach(project => {
-                const projectCard = document.createElement('div');
-                projectCard.className = 'bg-white p-6 rounded-xl shadow-md flex flex-col';
-                // Accent color logic
-                let accent, hover;
-                if (project.category === 'HR Learning & Development') {
-                    accent = 'ED7E6F'; hover = 'E76F51'; // Coral
-                } else if (project.category === 'Web Development') {
-                    accent = '3498DB'; hover = '217DBB'; // Blue
+                if (project.category === 'Web Development') {
+                    webProjects.push(project);
+                } else if (project.category === 'HR Learning & Development') {
+                    hrProjects.push(project);
                 } else {
-                    accent = '20B2AA'; hover = '008080'; // Teal
-                }
-                // Button rendering logic for first two cards
-                let buttonsHtml = '';
-                if (project.githubUrl) {
-                    buttonsHtml = `
-                        <div class="mt-auto flex gap-2">
-                            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
-                               class="flex-1 inline-block bg-gray-800 text-white text-center py-2 px-4 rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center">
-                                <i class="fab fa-github mr-2"></i>GitHub
-                            </a>
-                            <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
-                               class="flex-1 inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors flex items-center justify-center">
-                                View Site <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
-                        </div>
-                    `;
-                } else {
-                    buttonsHtml = `
-                        <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
-                           class="mt-auto inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors">
-                            View Full Project <i class="fas fa-external-link-alt ml-2"></i>
-                        </a>
-                    `;
-                }
-                projectCard.innerHTML = `
-                    <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer">
-                        <img src="${project.thumbnailUrl}" alt="${project.title} thumbnail" class="mb-4 rounded-lg object-cover w-full h-56 hover:opacity-80 transition-opacity">
-                    </a>
-                    <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
-                    <p class="text-sm text-gray-500 mb-4">${project.category}</p>
-                    <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
-                    ${buttonsHtml}
-                `;
-                if (project.category === 'HR Learning & Development') {
-                    portfolioContainerHR.appendChild(projectCard);
-                } else {
-                    portfolioContainerWeb.appendChild(projectCard);
+                    pmProjects.push(project);
                 }
             });
-
+            // Helper to render cards
+            function renderPortfolioCards(projects, container) {
+                projects.forEach((project, idx) => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'bg-white p-6 rounded-xl shadow-md flex flex-col';
+                    // Accent color logic
+                    let accent, hover;
+                    if (project.category === 'HR Learning & Development') {
+                        accent = 'ED7E6F'; hover = 'E76F51'; // Coral
+                    } else if (project.category === 'Web Development') {
+                        accent = '3498DB'; hover = '217DBB'; // Blue
+                    } else {
+                        accent = '20B2AA'; hover = '008080'; // Teal
+                    }
+                    // Button rendering logic for web dev cards
+                    let buttonsHtml = '';
+                    if (project.githubUrl) {
+                        buttonsHtml = `
+                            <div class="mt-auto flex gap-2">
+                                <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
+                                   class="flex-1 inline-block bg-gray-800 text-white text-center py-2 px-4 rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center">
+                                    <i class="fab fa-github mr-2"></i>GitHub
+                                </a>
+                                <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
+                                   class="flex-1 inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors flex items-center justify-center">
+                                    View Site <i class="fas fa-external-link-alt ml-2"></i>
+                                </a>
+                            </div>
+                        `;
+                    } else {
+                        buttonsHtml = `
+                            <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
+                               class="mt-auto inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors">
+                                View Full Project <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        `;
+                    }
+                    // HR L&D subhead logic
+                    let subhead = '';
+                    if (project.category === 'HR Learning & Development') {
+                        // First five HR cards: "Case Study: Precision Installations Co." in dark blue
+                        // Last HR card: "Case Study: KEdTech Solutions" in dark blue
+                        let hrLabel = '';
+                        let color = '#3D405B'; // dark blue
+                        let isLastHR = false;
+                        if (container === portfolioContainerHR) {
+                            isLastHR = (idx === hrProjects.length - 1);
+                        }
+                        if (isLastHR) {
+                            hrLabel = 'Case Study: KEdTech Solutions';
+                        } else {
+                            hrLabel = 'Case Study: Precision Installations Co.';
+                        }
+                        subhead = `<div class="text-sm font-semibold mb-1" style="color:${color}">${hrLabel}</div>`;
+                    }
+                    projectCard.innerHTML = `
+                        <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer">
+                            <img src="${project.thumbnailUrl}" alt="${project.title} thumbnail" class="mb-4 rounded-lg object-cover w-full h-56 hover:opacity-80 transition-opacity">
+                        </a>
+                        ${subhead}
+                        <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
+                        <p class="text-sm text-gray-500 mb-4">${project.category}</p>
+                        <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
+                        ${buttonsHtml}
+                    `;
+                    container.appendChild(projectCard);
+                });
+            }
+            renderPortfolioCards(pmProjects, portfolioContainerPM);
+            renderPortfolioCards(hrProjects, portfolioContainerHR);
+            renderPortfolioCards(webProjects, portfolioContainerWeb);
+            // ...existing code...
             const ctx = document.getElementById('skillsChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
