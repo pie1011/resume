@@ -548,18 +548,14 @@
                     // HR L&D subhead logic
                     let subhead = '';
                     if (project.category === 'HR Learning & Development') {
-                        // First five HR cards: "Case Study: Precision Installations Co." in dark blue
-                        // Last HR card: "Case Study: KEdTech Solutions" in dark blue
                         let hrLabel = '';
                         let color = '#3D405B'; // dark blue
-                        let isLastHR = false;
+                        // Use the index within the HR projects array to determine the label
+                        // First 5: Precision Installations Co., rest: K-edtech Solutions
                         if (container === portfolioContainerHR) {
-                            isLastHR = (idx === hrProjects.length - 2);
-                        }
-                        if (isLastHR) {
-                            hrLabel = 'Case Study: K-edtech Solutions';
-                        } else {
-                            hrLabel = 'Case Study: Precision Installations Co.';
+                            hrLabel = (idx < 5)
+                                ? 'Case Study: Precision Installations Co.'
+                                : 'Case Study: K-edtech Solutions';
                         }
                         subhead = `<div class="text-sm font-semibold mb-1" style="color:${color}">${hrLabel}</div>`;
                     }
