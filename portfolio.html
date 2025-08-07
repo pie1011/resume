@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katie Harshman | Project Showcase</title>
+  <title>Katie Harshman | HR L&D Project Portfolio</title>
   <link rel="stylesheet" href="output.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; background-color: #f4ede8; color: #3D405B; }
-    .card { background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .section { margin-bottom: 4rem; }
+    .card { background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+    .thumbnail { border-radius: 0.5rem; max-height: 300px; object-fit: cover; margin-bottom: 1rem; }
     .btn { background-color: #20B2AA; color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; transition: background 0.3s; display: inline-block; margin-top: 1rem; }
     .btn:hover { background-color: #008080; }
-    .subtitle { color: #6B7280; font-size: 0.875rem; }
+    .subtitle { color: #6B7280; font-size: 0.875rem; margin-bottom: 0.5rem; }
+    .card h3 { margin-top: 1rem; }
   </style>
 </head>
 <body class="antialiased">
@@ -30,47 +33,86 @@
   </header>
 
   <main class="container mx-auto px-6 py-12">
-    <h2 class="text-4xl font-bold text-center mb-8">HR Learning & Development Projects</h2>
-    <p class="text-center text-gray-500 max-w-2xl mx-auto mb-12">
-      A deeper look at selected projects that demonstrate my skills in digital learning, strategy, and impact measurement within the field of Learning & Development.
-    </p>
+    <section class="section">
+      <h2 class="text-4xl font-bold text-center mb-6">HR Learning & Development Portfolio</h2>
+      <div class="max-w-3xl mx-auto text-gray-700 text-lg">
+        <p>This portfolio serves as a comprehensive showcase of my expertise and growth in Learning and Development (L&D), demonstrating key competencies such as gamification, talent strategy, content planning, and learning analytics.</p>
+        <p class="mt-4">My professional journey blends experiences in education, technology, and business operations—from leading child and adult learning programs to designing training at a major tech company and launching a startup. I bring a well-rounded skill set in designing, implementing, and overseeing impactful learning initiatives, and enhancing processes.</p>
+      </div>
+    </section>
 
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Project 1 -->
+    <section class="section">
       <div class="card">
-        <h3 class="text-xl font-bold mb-1">Digital Learning Strategy Proposal</h3>
-        <p class="subtitle mb-2">Precision Installations Co.</p>
-        <p>Proposed a digital onboarding solution using adaptive LMS tools and video content to streamline training, improve communication, and reduce field errors.</p>
+        <img src="docs/thumbnails/10.png" alt="Digital Learning Strategy thumbnail" class="thumbnail">
+        <h3 class="text-2xl font-bold">Digital Learning Strategy Proposal</h3>
+        <p class="subtitle">Precision Installations Co.</p>
+        <p><strong>Objectives:</strong> Proposed a digital learning strategy to improve onboarding, upskill employees, reduce errors, and align training with business goals.</p>
+        <p class="mt-2"><strong>Processes:</strong> Used the ADDIE model to address training gaps with video modules, interactive diagrams, safety checklists, and adaptive learning through Odoo LMS. Included personalized learning paths and real-time tracking.</p>
+        <p class="mt-2"><strong>Outcomes:</strong> Anticipated 90% completion in 5 days, fewer errors, improved customer surveys, and stronger team communication. Design demonstrated creativity, empathy, and strategic thinking.</p>
         <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_4.pdf" target="_blank" class="btn">View Full Project</a>
       </div>
+    </section>
 
+    <!-- Project 2 -->
+    <section class="section">
       <div class="card">
-        <h3 class="text-xl font-bold mb-1">Talent Lifecycle Development Plan</h3>
-        <p class="subtitle mb-2">K-edtech Solutions</p>
-        <p>Designed a complete lifecycle plan aligning onboarding, development, and retention strategies with learning tools like peer mentorship and adaptive microlearning.</p>
+        <img src="docs/thumbnails/14.png" alt="Talent Lifecycle Plan thumbnail" class="thumbnail">
+        <h3 class="text-2xl font-bold">Talent Lifecycle Development Plan</h3>
+        <p class="subtitle">K-edtech Solutions</p>
+        <p><strong>Objectives:</strong> Demonstrated strategic talent management from attraction to retention, aligning L&D with each lifecycle stage.</p>
+        <p class="mt-2"><strong>Processes:</strong> Highlighted upskilling and growth culture in recruitment, integrated digital onboarding, mentorship, personalized development plans, and quarterly learning sprints. Used surveys and manager coaching for feedback loops.</p>
+        <p class="mt-2"><strong>Outcomes:</strong> Projected 30% reduction in onboarding time, improved internal mobility, and employee engagement. Emphasized responsible and learner-centered design.</p>
         <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_6.pdf" target="_blank" class="btn">View Full Project</a>
       </div>
+    </section>
 
+    <!-- Project 3 -->
+    <section class="section">
       <div class="card">
-        <h3 class="text-xl font-bold mb-1">Content Development & Evaluation Strategy</h3>
-        <p class="subtitle mb-2">K-edtech Solutions</p>
-        <p>Outlined a scalable content creation plan using backward design, gamification, and embedded analytics for real-time iteration and stakeholder visibility.</p>
+        <img src="docs/thumbnails/15.png" alt="Content Strategy thumbnail" class="thumbnail">
+        <h3 class="text-2xl font-bold">Content Development & Evaluation Strategy</h3>
+        <p class="subtitle">K-edtech Solutions</p>
+        <p><strong>Objectives:</strong> Created a data-driven, scalable approach to developing and evaluating digital content aligned with business needs.</p>
+        <p class="mt-2"><strong>Processes:</strong> Used backward design, modular content, diverse media, embedded feedback tools, and gamified elements. Included real-time analytics for iteration and reporting.</p>
+        <p class="mt-2"><strong>Outcomes:</strong> Expected increased completion, skill alignment, and faster productivity. Demonstrated empathy and innovation in instructional design.</p>
         <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_7.pdf" target="_blank" class="btn">View Full Project</a>
       </div>
+    </section>
 
+    <!-- Project 4 -->
+    <section class="section">
       <div class="card">
-        <h3 class="text-xl font-bold mb-1">Gamified Learning Experience Design</h3>
-        <p class="subtitle mb-2">K-edtech Solutions</p>
-        <p>Developed a gamified training simulation called "The Code Heist," using points, badges, and scenarios to motivate learners and increase engagement.</p>
+        <img src="docs/thumbnails/16.png" alt="Gamified Learning thumbnail" class="thumbnail">
+        <h3 class="text-2xl font-bold">Gamified Learning Experience Design</h3>
+        <p class="subtitle">K-edtech Solutions</p>
+        <p><strong>Objectives:</strong> Designed a gamified learning journey to boost engagement and retention through interactive, rewarding experiences.</p>
+        <p class="mt-2"><strong>Processes:</strong> Created "The Code Heist" simulation using missions, badges, points, feedback loops, and scenario-based challenges. Delivered through a custom LMS concept.</p>
+        <p class="mt-2"><strong>Outcomes:</strong> Projected 25% higher completion and 15% improved assessment scores. Built to support team motivation and performance through game design.</p>
         <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_8.pdf" target="_blank" class="btn">View Full Project</a>
       </div>
+    </section>
 
+    <!-- Project 5 -->
+    <section class="section">
       <div class="card">
-        <h3 class="text-xl font-bold mb-1">Leadership Development ROI Analysis</h3>
-        <p class="subtitle mb-2">VitaCore Health Services</p>
-        <p>Calculated ROI for a leadership training program using the Kirkpatrick model and internal metrics, with a projected ROI of 163% based on performance gains.</p>
+        <img src="docs/thumbnails/18.png" alt="ROI Analysis thumbnail" class="thumbnail">
+        <h3 class="text-2xl font-bold">Leadership Development ROI Analysis</h3>
+        <p class="subtitle">VitaCore Health Services</p>
+        <p><strong>Objectives:</strong> Evaluated a new leadership program’s ROI using performance and cost data to drive investment decisions.</p>
+        <p class="mt-2"><strong>Processes:</strong> Used the Kirkpatrick Model, calculated costs ($37,500), tracked changes via assessments, surveys, and feedback tools.</p>
+        <p class="mt-2"><strong>Outcomes:</strong> Estimated 20% increase in productivity, 15% decrease in turnover, and 163% ROI. Reflected leadership, empathy, and strategy.</p>
         <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_10.pdf" target="_blank" class="btn">View Full Project</a>
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3 class="text-3xl font-bold mb-4">Conclusion & Reflection</h3>
+        <p>This portfolio highlights my ability to design engaging and measurable L&D initiatives that align with business goals and improve learner outcomes. Each project reflects my strengths as a Creative, Empathetic, Responsible, Helpful Leader.</p>
+        <p class="mt-2">I’ve learned the importance of strategic alignment and data-driven evaluation in L&D, and I'm committed to roles where I can apply these principles in innovative environments. My next goal is to secure a fulfilling position in L&D by October 31, 2025.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="bg-white mt-16">
