@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,30 +26,42 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f4ede8; /* Changed from #FDFBF7 and #ffeadb */
+            background-color: #f4ede8;
+            /* Changed from #FDFBF7 and #ffeadb */
             color: #3D405B;
         }
+
         .nav-link {
             transition: color 0.3s, border-bottom-color 0.3s;
         }
-        .nav-link:hover, .nav-link.active {
-            color: #20B2AA; /* Teal accent */
-            border-bottom-color: #20B2AA; /* Teal accent */
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #20B2AA;
+            /* Teal accent */
+            border-bottom-color: #20B2AA;
+            /* Teal accent */
         }
+
         .timeline-item-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
             padding: 0 1rem;
         }
+
         .timeline-item-content.open {
-            max-height: 500px; /* Adjusted max-height for timeline */
+            max-height: 500px;
+            /* Adjusted max-height for timeline */
             padding: 1rem 1rem;
         }
+
         .skill-button.active {
-            background-color: #20B2AA; /* Teal accent */
+            background-color: #20B2AA;
+            /* Teal accent */
             color: #FFFFFF;
         }
+
         .chart-container {
             position: relative;
             margin: auto;
@@ -63,11 +76,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2M24ZBGJ33"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-2M24ZBGJ33');
+    gtag('config', 'G-2M24ZBGJ33');
 </script>
 
 <body class="antialiased">
@@ -77,71 +90,167 @@
             <h1 class="text-xl font-bold text-[#3D405B]">Katie Harshman</h1>
             <div class="hidden md:flex items-center space-x-8" id="desktop-menu">
                 <a href="#overview" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Overview</a>
+                <a href="#portfolio" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Portfolio</a>
                 <a href="#experience" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Experience</a>
                 <a href="#skills" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Skills</a>
                 <a href="#education" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Education</a>
-                <a href="#portfolio" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Portfolio</a>
                 <a href="#contact" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Contact</a>
             </div>
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none" aria-label="Open menu" aria-expanded="false">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none" aria-label="Open menu"
+                    aria-expanded="false">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="fixed inset-0 bg-white/95 shadow-lg z-50 flex flex-col items-center justify-start pt-24 space-y-2 text-lg hidden md:hidden transition-all min-h-screen overflow-y-auto">
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white/95 shadow-lg z-50 flex flex-col items-center justify-start pt-24 space-y-2 text-lg hidden md:hidden transition-all min-h-screen overflow-y-auto">
             <a href="#overview" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Overview</a>
-            <a href="#experience" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Experience</a>
+            <a href="#portfolio"
+                class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Portfolio</a>
+            <a href="#experience"
+                class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Experience</a>
             <a href="#skills" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Skills</a>
-            <a href="#education" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Education</a>
-            <a href="#portfolio" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Portfolio</a>
+            <a href="#education"
+                class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Education</a>
             <a href="#contact" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Contact</a>
-            <button id="mobile-menu-close" class="absolute top-4 right-6 text-2xl text-gray-600" aria-label="Close menu">
+            <button id="mobile-menu-close" class="absolute top-4 right-6 text-2xl text-gray-600"
+                aria-label="Close menu">
                 <i class="fas fa-times"></i>
             </button>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-8 md:py-16">
+    <main  id="overview"  class="container mx-auto px-6 py-8 md:py-16">
         <section id="hero" class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-bold text-[#3D405B] mb-4">Katie Harshman</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Project Coordination | Administrative Support | Technical Instruction | Customer Service</p>
-            <div class="flex flex-wrap justify-center items-center space-x-6 mt-6 text-gray-500"> 
-                <a href="#contact" class="hover:text-[#20B2AA] transition-colors"><i class="fas fa-envelope mr-2"></i>Contact</a>
-                <a href="#portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-[#20B2AA] transition-colors"><i class="fas fa-briefcase mr-2"></i>Portfolio</a>
-                <a href="https://www.linkedin.com/in/pie1011" target="_blank" rel="noopener noreferrer" class="hover:text-[#20B2AA] transition-colors"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
-                <a href="https://github.com/pie1011" target="_blank" rel="noopener noreferrer" class="hover:text-[#20B2AA] transition-colors"><i class="fab fa-github mr-2"></i>GitHub</a>
-                <a href="https://trailblazer.me/id/katharineharshman" target="_blank" rel="noopener noreferrer" class="hover:text-[#20B2AA] transition-colors"><i class="fab fa-salesforce mr-2"></i>Salesforce</a>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Project Coordination | Administrative Support | Technical
+                Instruction | Customer Service</p>
+            <div class="flex flex-wrap justify-center items-center space-x-6 mt-6 text-gray-500">
+                <a href="#contact" class="hover:text-[#20B2AA] transition-colors"><i
+                        class="fas fa-envelope mr-2"></i>Contact</a>
+                <a href="#portfolio" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-[#20B2AA] transition-colors"><i class="fas fa-briefcase mr-2"></i>Portfolio</a>
+                <a href="https://www.linkedin.com/in/pie1011" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-[#20B2AA] transition-colors"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                <a href="https://github.com/pie1011" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-[#20B2AA] transition-colors"><i class="fab fa-github mr-2"></i>GitHub</a>
+                <a href="https://trailblazer.me/id/katharineharshman" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-[#20B2AA] transition-colors"><i class="fab fa-salesforce mr-2"></i>Salesforce</a>
             </div>
 
         </section>
 
-        <section id="overview" class="mb-16 scroll-mt-20">
+        <section class="mb-16 scroll-mt-20">
             <div class="bg-white p-8 rounded-xl shadow-md">
                 <h3 class="text-2xl font-bold text-center mb-2 text-[#3D405B]">Professional Summary</h3>
                 <p class="text-center text-gray-600 mb-8 max-w-4xl mx-auto">
-                    Highly organized and detail-oriented professional with a proven track record in project coordination, administrative support, and technical instruction. Adept at streamlining workflows, managing diverse priorities, and fostering effective communication. Eager to leverage strong analytical and problem-solving skills to contribute to efficient operations and successful project delivery. Holds certificates in Project Management and CRM Platform Administration, with a strong foundation in technical concepts and a passion for continuous learning and development.
+                    Highly organized and detail-oriented professional with a proven track record in project
+                    coordination, administrative support, and technical instruction. Adept at streamlining workflows,
+                    managing diverse priorities, and fostering effective communication. Eager to leverage strong
+                    analytical and problem-solving skills to contribute to efficient operations and successful project
+                    delivery. Holds certificates in Project Management and CRM Platform Administration, with a strong
+                    foundation in technical concepts and a passion for continuous learning and development.
                 </p>
 
-            <!-- Section navigation buttons -->
-            <div class="flex flex-wrap justify-center gap-4 mt-8 mb-8">
-                <a href="#experience" class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Experience</a>
-                <a href="#skills" class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Skills</a>
-                <a href="#education" class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Education</a>
-                <a href="#portfolio" class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Portfolio</a>
-                <a href="#contact" class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Contact</a>
-            </div>
+                <!-- Section navigation buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mt-8 mb-8">
+                    <a href="#experience"
+                        class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Experience</a>
+                    <a href="#skills"
+                        class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Skills</a>
+                    <a href="#education"
+                        class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Education</a>
+                    <a href="#portfolio"
+                        class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Portfolio</a>
+                    <a href="#contact"
+                        class="px-6 py-2 rounded-full bg-[#20B2AA] text-white font-medium hover:bg-[#008080] transition-colors">Contact</a>
+                </div>
+
+                <!-- In-depth L&D button -->
+                <h5 class="font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">For an in-depth summary and
+                    analysis of five sample projects, visit here: <br /><br />
+                    <a href="portfolio.html"
+                        class="px-6 py-2 rounded-full bg-[#ED7E6F] text-white text-center font-medium hover:bg-[#E76F51] transition-colors mt-4">In-Depth
+                        HR L&D Samples</a>
+                </h5>
 
                 <!-- Competency Chart to hide -->
-                 <div class="hidden"> 
+                <div class="hidden">
                     <h4 class="text-xl font-bold text-center mb-4 text-[#3D405B]">Core Competency Overview</h4>
-                    <p class="text-center text-gray-500 mb-6">This chart provides a visual summary of my key skill areas, developed through diverse roles in technology, operations, and education. It reflects a balanced profile ready for multifaceted challenges in project management and administrative roles.</p>
+                    <p class="text-center text-gray-500 mb-6">This chart provides a visual summary of my key skill
+                        areas, developed through diverse roles in technology, operations, and education. It reflects a
+                        balanced profile ready for multifaceted challenges in project management and administrative
+                        roles.</p>
                     <div class="chart-container">
                         <canvas id="skillsChart"></canvas>
                     </div>
                 </div>
+                <!-- End hidden -->
+
             </div>
         </section>
+
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="mb-16 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-4 text-[#3D405B]">
+                Portfolio Projects
+            </h3>
+            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">
+                Explore a selection of my Project Management, HR Learning & Development, and Web Development work. Each
+                card provides a brief overview, and you can click "View Full Project" to open the detailed PDF document
+                (or site link) in a new tab.
+            </p>
+            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">
+                <i>
+                    Please note: Aside from my personal portfolio site, all company names, scenarios, and organizational
+                    details presented in this portfolio are entirely fictitious and created for educational purposes.
+                    Any resemblance to real companies, individuals, or events is purely coincidental.
+                </i>
+            </p>
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="#portfolio-pm"
+                    class="px-6 py-2 rounded-full bg-[#20B2AA] text-white text-center font-medium hover:bg-[#008080] transition-colors">Project
+                    Management</a>
+                <a href="#portfolio-hr"
+                    class="px-6 py-2 rounded-full bg-[#ED7E6F] text-white text-center font-medium hover:bg-[#E76F51] transition-colors">HR
+                    Learning & Development</a>
+                <a href="#portfolio-web"
+                    class="px-6 py-2 rounded-full bg-[#3498DB] text-white text-center font-medium hover:bg-[#217DBB] transition-colors">Web
+                    Development</a>
+            </div>
+            <div>
+                <h4 id="portfolio-pm" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">
+                    Project Management</h4>
+                <div id="portfolio-container-pm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Project Management cards injected here -->
+                </div>
+            </div>
+            <div>
+                <h4 id="portfolio-hr" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">HR
+                    Learning & Development: Case Studies</h4>
+                <h5 class="font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">For an in-depth summary and
+                    analysis of five sample projects, visit here:
+                    <a href="portfolio.html"
+                        class="px-6 py-2 rounded-full bg-[#ED7E6F] text-white text-center font-medium hover:bg-[#E76F51] transition-colors">In-Depth
+                        HR L&D Samples</a>
+                </h5>
+                <div id="portfolio-container-hr"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 mt-6">
+                    <!-- HR L&D cards injected here -->
+                </div>
+            </div>
+            <div>
+                <h4 id="portfolio-web" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">Web
+                    Development</h4>
+                <div id="portfolio-container-web" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Web Dev cards injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
 
         <section id="experience" class="mb-16 scroll-mt-20">
             <h3 class="text-3xl font-bold text-center mb-10 text-[#3D405B]">Experience Timeline</h3>
@@ -152,7 +261,9 @@
 
         <section id="skills" class="mb-16 scroll-mt-20">
             <h3 class="text-3xl font-bold text-center mb-4 text-[#3D405B]">Skills Explorer</h3>
-            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">My skills bridge the gap between technical execution and strategic management. Use the filters below to explore the specific abilities I can bring to your team, whether it's managing a project, supporting operations, or training users.</p>
+            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">My skills bridge the gap between technical
+                execution and strategic management. Use the filters below to explore the specific abilities I can bring
+                to your team, whether it's managing a project, supporting operations, or training users.</p>
             <div id="skills-filter" class="flex flex-wrap justify-center gap-2 mb-8">
                 <!-- Skill filter buttons will be injected here -->
             </div>
@@ -185,54 +296,18 @@
                     <h4 class="font-bold text-xl mb-2 text-[#3D405B]">Professional Development</h4>
                     <p class="text-gray-600">A selection of key training and certifications:</p>
                     <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-                        <li><span class="font-semibold">Salesforce:</span> Business Admin Specialist, Security Specialist, Apex Specialist, Approval Process Specialist & more! View my profile and Salesforce Trailhead Badges
-                            <a href="https://trailblazer.me/id/katharineharshman" target="_blank" rel="noopener noreferrer" class="hover:text-[#20B2AA] underline">here</a>
+                        <li><span class="font-semibold">Salesforce:</span> Business Admin Specialist, Security
+                            Specialist, Apex Specialist, Approval Process Specialist & more! View my profile and
+                            Salesforce Trailhead Badges
+                            <a href="https://trailblazer.me/id/katharineharshman" target="_blank"
+                                rel="noopener noreferrer" class="hover:text-[#20B2AA] underline">here</a>
                         </li>
-                        <li><span class="font-semibold">Udemy:</span> Clean Code, Software Testing, Business Analyst</li>
-                        <li><span class="font-semibold">Codecademy:</span> Python Web Apps with Flask, Intro to DevOps</li>
+                        <li><span class="font-semibold">Udemy:</span> Clean Code, Software Testing, Business Analyst
+                        </li>
+                        <li><span class="font-semibold">Codecademy:</span> Python Web Apps with Flask, Intro to DevOps
+                        </li>
                         <li><span class="font-semibold">Freecodecamp:</span> Responsive Web Design, JS Algorithms</li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="mb-16 scroll-mt-20">
-            <h3 class="text-3xl font-bold text-center mb-4 text-[#3D405B]">
-                Portfolio Projects
-            </h3>
-            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">
-                Explore a selection of my Project Management, HR Learning & Development, and Web Development work. Each card provides a brief overview, and you can click "View Full Project" to open the detailed PDF document (or site link) in a new tab.
-            </p>
-            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">
-                <i>
-                    Please note: Aside from my personal portfolio site, all company names, scenarios, and organizational details presented in this portfolio are entirely fictitious and created for educational purposes. Any resemblance to real companies, individuals, or events is purely coincidental.
-                </i>
-            </p>
-            <div class="flex justify-center gap-4 mb-8">
-                <a href="#portfolio-pm" class="px-6 py-2 rounded-full bg-[#20B2AA] text-white text-center font-medium hover:bg-[#008080] transition-colors">Project Management</a>
-                <a href="#portfolio-hr" class="px-6 py-2 rounded-full bg-[#ED7E6F] text-white text-center font-medium hover:bg-[#E76F51] transition-colors">HR Learning & Development</a>
-                <a href="#portfolio-web" class="px-6 py-2 rounded-full bg-[#3498DB] text-white text-center font-medium hover:bg-[#217DBB] transition-colors">Web Development</a>
-            </div>
-            <div>
-                <h4 id="portfolio-pm" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">Project Management</h4>
-                <div id="portfolio-container-pm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <!-- Project Management cards injected here -->
-                </div>
-            </div>
-            <div>
-                <h4 id="portfolio-hr" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">HR Learning & Development: Case Studies</h4>
-                <h5 class="font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24" >For an in-depth summary and analysis of five sample projects, visit here: 
-                <a href="portfolio.html" class="px-6 py-2 rounded-full bg-[#ED7E6F] text-white text-center font-medium hover:bg-[#E76F51] transition-colors">In-Depth HR L&D Samples</a>
-</h5>
-                <div id="portfolio-container-hr" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 mt-6">
-                    <!-- HR L&D cards injected here -->
-                </div>
-            </div>
-            <div>
-                <h4 id="portfolio-web" class="text-2xl font-bold text-[#3D405B] mb-4 mt-8 text-center scroll-mt-24">Web Development</h4>
-                <div id="portfolio-container-web" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Web Dev cards injected here -->
                 </div>
             </div>
         </section>
@@ -240,26 +315,34 @@
         <!-- Contact Form Section (Netlify) -->
         <section id="contact" class="mb-16 scroll-mt-20">
             <h3 class="text-3xl font-bold text-center mb-4 text-[#3D405B]">Contact Me</h3>
-            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">Have a question or want to connect? Fill out the form below and I'll get back to you soon.</p>
-            <form name="contact" method="POST" data-netlify="true" class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md space-y-6">
+            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">Have a question or want to connect? Fill out the
+                form below and I'll get back to you soon.</p>
+            <form name="contact" method="POST" data-netlify="true"
+                class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-md space-y-6">
                 <input type="hidden" name="form-name" value="contact">
                 <div>
                     <label for="name" class="block font-medium text-gray-700 mb-1">Name</label>
-                    <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#20B2AA]">
+                    <input type="text" id="name" name="name" required
+                        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#20B2AA]">
                 </div>
                 <div>
                     <label for="email" class="block font-medium text-gray-700 mb-1">Email</label>
-                    <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#20B2AA]">
+                    <input type="email" id="email" name="email" required
+                        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#20B2AA]">
                 </div>
                 <div>
                     <label for="subject" class="block font-medium text-gray-700 mb-1">Subject</label>
-                    <input type="text" id="subject" name="subject" required class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#20B2AA]">
+                    <input type="text" id="subject" name="subject" required
+                        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#20B2AA]">
                 </div>
                 <div>
                     <label for="message" class="block font-medium text-gray-700 mb-1">Message</label>
-                    <textarea id="message" name="message" rows="5" required class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#20B2AA]"></textarea>
+                    <textarea id="message" name="message" rows="5" required
+                        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-[#20B2AA]"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-[#20B2AA] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#008080] transition-colors">Send Message</button>
+                <button type="submit"
+                    class="w-full bg-[#20B2AA] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#008080] transition-colors">Send
+                    Message</button>
             </form>
         </section>
 
@@ -471,7 +554,7 @@
             experienceData.forEach((job, index) => {
                 const item = document.createElement('div');
                 item.className = 'mb-8 ml-10';
-                
+
                 const listItems = job.details.map(detail => `<li class="text-gray-600">${detail}</li>`).join('');
 
                 item.innerHTML = `
@@ -489,7 +572,7 @@
                 `;
                 timelineContainer.appendChild(item);
             });
-            
+
             document.querySelectorAll('.timeline-item-header').forEach(header => {
                 header.addEventListener('click', () => {
                     header.nextElementSibling.classList.toggle('open');
@@ -646,7 +729,7 @@
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     let label = context.dataset.label || '';
                                     if (label) {
                                         label += ': ';
@@ -671,14 +754,14 @@
                             }
                         },
                         y: {
-                           grid: {
+                            grid: {
                                 display: false
                             }
                         }
                     }
                 }
             });
-            
+
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -703,7 +786,7 @@
             });
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     const isMobileMenuLink = this.closest('#mobile-menu') !== null;
                     if (!isMobileMenuLink) {
                         e.preventDefault();
@@ -723,7 +806,7 @@
             const activateNavLink = () => {
                 let currentActive = '';
                 // Adjust offset for better active state detection
-                const offset = 150; 
+                const offset = 150;
 
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
@@ -740,11 +823,12 @@
                     }
                 });
             };
-            
+
             window.addEventListener('scroll', activateNavLink);
             activateNavLink(); // Call on load to set initial active link
 
         });
     </script>
 </body>
+
 </html>
