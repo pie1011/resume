@@ -9,12 +9,15 @@
   <style>
     body { font-family: 'Inter', sans-serif; background-color: #f4ede8; color: #3D405B; }
     .section { margin-bottom: 4rem; }
-    .card { background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
-    .thumbnail { border-radius: 0.5rem; max-height: 300px; object-fit: cover; margin-bottom: 1rem; }
+    .card { background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .card-flex { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    .thumbnail { flex: 0 0 220px; max-width: 220px; border-radius: 0.5rem; object-fit: cover; }
+    .card-body { flex: 1; min-width: 280px; }
     .btn { background-color: #20B2AA; color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; transition: background 0.3s; display: inline-block; margin-top: 1rem; }
     .btn:hover { background-color: #008080; }
     .subtitle { color: #6B7280; font-size: 0.875rem; margin-bottom: 0.5rem; }
-    .card h3 { margin-top: 1rem; }
+    .card h3 { margin-top: 0.5rem; }
+    .card p { margin-bottom: 0.75rem; }
   </style>
 </head>
 <body class="antialiased">
@@ -36,83 +39,110 @@
     <section class="section">
       <h2 class="text-4xl font-bold text-center mb-6">HR Learning & Development Portfolio</h2>
       <div class="max-w-3xl mx-auto text-gray-700 text-lg">
-        <p>This portfolio serves as a comprehensive showcase of my expertise and growth in Learning and Development (L&D), demonstrating key competencies such as gamification, talent strategy, content planning, and learning analytics.</p>
-        <p class="mt-4">My professional journey blends experiences in education, technology, and business operations—from leading child and adult learning programs to designing training at a major tech company and launching a startup. I bring a well-rounded skill set in designing, implementing, and overseeing impactful learning initiatives, and enhancing processes.</p>
+        <p>This portfolio serves as a comprehensive showcase of my expertise and growth in Learning and Development (L&D), demonstrating key competencies such as gamification, talent strategy, content planning, and learning analytics. My professional journey has provided a unique foundation for this field, blending diverse experiences in education, technology, and business operations.</p>
+        <p class="mt-4">My background includes extensive experience in teaching and program leadership, from directing child programs and teaching preschool to instructing adult learners in software development. At a major technology company, I further honed my skills by mentoring both college students and new software developers in various workshops. Additionally, I gained valuable experience in business process planning and documentation through my involvement in the startup of a home-services company. Coupled with my recent completion of a Project Management program, I bring a well-rounded skill set in designing, implementing, and overseeing impactful learning initiatives, and enhancing processes. This portfolio aims to illustrate how these experiences, combined with my passion for creating engaging and effective learning solutions, position me to excel in dynamic L&D roles within technology and e-learning industries.</p>
       </div>
     </section>
 
-    <!-- Project 1 -->
     <section class="section">
-      <div class="card">
-        <img src="docs/thumbnails/10.png" alt="Digital Learning Strategy thumbnail" class="thumbnail">
-        <h3 class="text-2xl font-bold">Digital Learning Strategy Proposal</h3>
-        <p class="subtitle">Precision Installations Co.</p>
-        <p><strong>Objectives:</strong> Proposed a digital learning strategy to improve onboarding, upskill employees, reduce errors, and align training with business goals.</p>
-        <p class="mt-2"><strong>Processes:</strong> Used the ADDIE model to address training gaps with video modules, interactive diagrams, safety checklists, and adaptive learning through Odoo LMS. Included personalized learning paths and real-time tracking.</p>
-        <p class="mt-2"><strong>Outcomes:</strong> Anticipated 90% completion in 5 days, fewer errors, improved customer surveys, and stronger team communication. Design demonstrated creativity, empathy, and strategic thinking.</p>
-        <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_4.pdf" target="_blank" class="btn">View Full Project</a>
-      </div>
-    </section>
+  <div class="card ">
+    <div class="card-flex">
+      <img src="docs/thumbnails/10.png" alt="Digital Learning Strategy thumbnail" class="thumbnail">
+        <div class="card-body">
+            <h3 class="text-2xl font-bold">Digital Learning Strategy Proposal</h3>
+            <p class="subtitle">Case Study: Precision Installations Co.</p>
+        </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Objectives:</strong> This initiative proposed a digital learning strategy to address onboarding and skill inconsistencies in a dispersed field team. The goal was to implement scalable, accessible training that would upskill employees, reduce installation errors, and strengthen internal communication—while aligning with business performance goals.</p>
+      <p><strong>Processes:</strong> Following the ADDIE model, analysis revealed training gaps related to installation quality and communication among new hires. The team designed a digital module with instructional videos, interactive diagrams, safety checklists, and realistic dialogue scenarios. The content was hosted on Odoo LMS (free version), chosen for its cost-effectiveness and scalability. Adaptive learning features—like conditional branching and auto-assigned review lessons—ensured personalized learning paths. Odoo’s tracking tools enabled real-time monitoring for both learners and supervisors, demonstrating a Leader-like, Responsible, and Helpful approach.</p>
+      <p><strong>Outcomes:</strong> The proposed Impact Measurement Report outlined anticipated quantitative and qualitative KPIs: 90% training completion within 5 days, fewer than 2 supervisor corrections per new hire in the first month, a 4/5 average on customer service surveys, and improved team communication noted in job debriefs. These metrics would allow for ongoing evaluation and continuous improvement planning. The project reflected Creative instructional design, Empathetic understanding of learner needs, and a strong alignment with organizational goals.</p>
+      <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_4.pdf" target="_blank" class="btn">View Full Project</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Project 2 -->
-    <section class="section">
-      <div class="card">
-        <img src="docs/thumbnails/14.png" alt="Talent Lifecycle Plan thumbnail" class="thumbnail">
+<section class="section">
+  <div class="card">
+    <div class="card-flex">
+      <img src="docs/thumbnails/14.png" alt="Talent Lifecycle Plan thumbnail" class="thumbnail">
+      <div class="card-body">
         <h3 class="text-2xl font-bold">Talent Lifecycle Development Plan</h3>
-        <p class="subtitle">K-edtech Solutions</p>
-        <p><strong>Objectives:</strong> Demonstrated strategic talent management from attraction to retention, aligning L&D with each lifecycle stage.</p>
-        <p class="mt-2"><strong>Processes:</strong> Highlighted upskilling and growth culture in recruitment, integrated digital onboarding, mentorship, personalized development plans, and quarterly learning sprints. Used surveys and manager coaching for feedback loops.</p>
-        <p class="mt-2"><strong>Outcomes:</strong> Projected 30% reduction in onboarding time, improved internal mobility, and employee engagement. Emphasized responsible and learner-centered design.</p>
-        <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_6.pdf" target="_blank" class="btn">View Full Project</a>
+        <p class="subtitle">Case Study: K-edtech Solutions</p>
       </div>
-    </section>
+    </div>
+    <div class="card-body">
+      <p><strong>Objectives:</strong> This project involved designing a Talent Lifecycle Development Plan for K-edtech Solutions to demonstrate the strategic management of talent from attraction through retention. The objective was to analyze how Learning & Development (L&D) influences each stage of the employee lifecycle, create development initiatives that align individual growth with organizational priorities, and propose retention strategies grounded in continuous learning and career progression.</p>
+      <p><strong>Processes:</strong> The plan was structured around three core phases: Attraction, Development, and Retention. To attract talent, the strategy leveraged L&D branding, highlighting K-edtech's upskilling culture and career advancement pathways on job postings and onboarding materials. During the development phase, the proposal included a digital onboarding track with interactive modules, peer mentorship, and goal-setting frameworks to accelerate integration and learning. Customized development plans, aligned with team goals and skills matrices, ensured scalable growth. Retention strategies emphasized continuous learning through quarterly learning sprints, adaptive microlearning, and gamified progress tracking. Managers received coaching resources and pulse survey templates to monitor engagement and adjust support. A strong emphasis was placed on aligning learning objectives with career paths, empowering employees to pursue visible growth milestones. This Creative and Empathetic approach ensured a learner-first experience while remaining strategically aligned with business goals.</p>
+      <p><strong>Outcomes:</strong> The anticipated outcomes included faster onboarding times, higher internal mobility, and improved engagement and retention. Key projections featured a 30% reduction in time-to-productivity for new hires and increased internal promotion rates within one year. By embedding learning into every stage of the talent lifecycle, the plan would demonstrate a Responsible, Helpful, and Leader-like strategy for developing a future-ready workforce while supporting organizational success.</p>
+      <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_6.pdf" target="_blank" class="btn">View Full Project</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Project 3 -->
-    <section class="section">
-      <div class="card">
-        <img src="docs/thumbnails/15.png" alt="Content Strategy thumbnail" class="thumbnail">
+<section class="section">
+  <div class="card">
+    <div class="card-flex">
+      <img src="docs/thumbnails/15.png" alt="Content Development Strategy thumbnail" class="thumbnail">
+      <div class="card-body">
         <h3 class="text-2xl font-bold">Content Development & Evaluation Strategy</h3>
-        <p class="subtitle">K-edtech Solutions</p>
-        <p><strong>Objectives:</strong> Created a data-driven, scalable approach to developing and evaluating digital content aligned with business needs.</p>
-        <p class="mt-2"><strong>Processes:</strong> Used backward design, modular content, diverse media, embedded feedback tools, and gamified elements. Included real-time analytics for iteration and reporting.</p>
-        <p class="mt-2"><strong>Outcomes:</strong> Expected increased completion, skill alignment, and faster productivity. Demonstrated empathy and innovation in instructional design.</p>
-        <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_7.pdf" target="_blank" class="btn">View Full Project</a>
+        <p class="subtitle">Case Study: K-edtech Solutions</p>
       </div>
-    </section>
+    </div>
+    <div class="card-body">
+      <p><strong>Objectives:</strong> This project outlined a scalable strategy for developing and evaluating digital learning content at K-edtech Solutions. The primary goal was to create content that was personalized, data-driven, and aligned with organizational upskilling needs, while fostering continuous learning through embedded evaluation.</p>
+      <p><strong>Processes:</strong> The proposed strategy applied a backward design approach and included: (1) needs analysis aligned with organizational goals, (2) modular content planning using diverse media formats, and (3) integration of continuous assessment. A formative evaluation loop was embedded at each stage using learner feedback, performance data, and stakeholder input. To enhance engagement, gamified elements like level progression and milestone badges were added. The plan demonstrated a Creative and Empathetic design mindset and a Responsible commitment to data-driven improvement.</p>
+      <p><strong>Outcomes:</strong> Anticipated benefits included increased training completion rates, stronger alignment with role-based competencies, and faster time-to-productivity for new hires. Built-in analytics would support real-time iteration and stakeholder reporting. The strategy emphasized communication, digital literacy, and long-term knowledge transfer—proving Helpful for both learners and leadership. This project showcased forward-thinking leadership and an innovative approach to content evaluation.</p>
+      <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_7.pdf" target="_blank" class="btn">View Full Project</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Project 4 -->
-    <section class="section">
-      <div class="card">
-        <img src="docs/thumbnails/16.png" alt="Gamified Learning thumbnail" class="thumbnail">
+<section class="section">
+  <div class="card">
+    <div class="card-flex">
+      <img src="docs/thumbnails/16.png" alt="Gamified Learning Experience thumbnail" class="thumbnail">
+      <div class="card-body">
         <h3 class="text-2xl font-bold">Gamified Learning Experience Design</h3>
-        <p class="subtitle">K-edtech Solutions</p>
-        <p><strong>Objectives:</strong> Designed a gamified learning journey to boost engagement and retention through interactive, rewarding experiences.</p>
-        <p class="mt-2"><strong>Processes:</strong> Created "The Code Heist" simulation using missions, badges, points, feedback loops, and scenario-based challenges. Delivered through a custom LMS concept.</p>
-        <p class="mt-2"><strong>Outcomes:</strong> Projected 25% higher completion and 15% improved assessment scores. Built to support team motivation and performance through game design.</p>
-        <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_8.pdf" target="_blank" class="btn">View Full Project</a>
+        <p class="subtitle">Case Study: K-edtech Solutions</p>
       </div>
-    </section>
+    </div>
+    <div class="card-body">
+      <p><strong>Objectives:</strong> This project aimed to boost learner engagement and improve knowledge retention through a gamified learning program for K-edtech Solutions. The goal was to turn passive learning into an interactive, motivating experience, using game design principles to increase course completion rates, enhance skill application, and foster a culture of continuous learning.</p>
+      <p><strong>Processes:</strong> Using an ADDIE-inspired approach, the team conducted a training needs analysis to uncover learner pain points. We designed a custom theme, “The Code Heist,” where learners progressed through challenges framed as missions. Key gamification elements included points (“Mastermind Points”), badges (“Cipher Badges”), trophies, feedback loops, and rank progression from Rookie to Mastermind. Interactive modules and scenario-based coding challenges were created and delivered through a hypothetical LMS that tracked user progress and hosted leaderboards. The design prioritized accessibility, visual engagement, and motivation, using a Creative and Empathetic lens to address learner needs while aligning with organizational goals.</p>
+      <p><strong>Outcomes:</strong> With this proposal, the project could lead to a 25% increase in completion rates and a 15% rise in assessment scores compared to traditional formats. Learners would benefit from immediate feedback, visible progress, and rewards for mastery. The gamified format was designed to promote deeper learning, team engagement, and a more energized company learning culture. These anticipated outcomes reflected a Responsible, Creative, and Helpful solution to a common L&D challenge.</p>
+      <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_8.pdf" target="_blank" class="btn">View Full Project</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Project 5 -->
-    <section class="section">
-      <div class="card">
-        <img src="docs/thumbnails/18.png" alt="ROI Analysis thumbnail" class="thumbnail">
-        <h3 class="text-2xl font-bold">Leadership Development ROI Analysis</h3>
-        <p class="subtitle">VitaCore Health Services</p>
-        <p><strong>Objectives:</strong> Evaluated a new leadership program’s ROI using performance and cost data to drive investment decisions.</p>
-        <p class="mt-2"><strong>Processes:</strong> Used the Kirkpatrick Model, calculated costs ($37,500), tracked changes via assessments, surveys, and feedback tools.</p>
-        <p class="mt-2"><strong>Outcomes:</strong> Estimated 20% increase in productivity, 15% decrease in turnover, and 163% ROI. Reflected leadership, empathy, and strategy.</p>
-        <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_10.pdf" target="_blank" class="btn">View Full Project</a>
+<section class="section">
+  <div class="card">
+    <div class="card-flex">
+      <img src="docs/thumbnails/17.png" alt="Training ROI Report thumbnail" class="thumbnail">
+      <div class="card-body">
+        <h3 class="text-2xl font-bold">Training ROI & Analytics Report</h3>
+        <p class="subtitle">Case Study: VitaCore Health Services</p>
       </div>
-    </section>
+    </div>
+    <div class="card-body">
+      <p><strong>Objectives:</strong> This project focused on evaluating the return on investment (ROI) for a new leadership development program at VitaCore Health Services. The goal was to assess the program’s impact on key business outcomes such as productivity, employee retention, and performance, while also identifying opportunities for continuous improvement.</p>
+      <p><strong>Processes:</strong> The analysis applied Kirkpatrick’s Four Levels of Evaluation and Philips’ ROI Methodology. Data sources included participant feedback, pre- and post-assessments, productivity metrics, and retention records. The report also calculated total program costs (including time, coaching, and content development) to determine the financial ROI. Key performance indicators (KPIs) were tracked through dashboards and visualized to support executive reporting. This Responsible and Leader-like approach to analytics ensured alignment with business priorities while supporting a learning culture.</p>
+      <p><strong>Outcomes:</strong> The report estimated a 120% ROI, driven by a 12% increase in team productivity and a projected reduction in turnover by 8%. Feedback scores from managers averaged 4.7/5, and post-training assessments showed a 25% increase in skill proficiency. The findings supported the program’s continuation and informed updates to the coaching model and module design. This project demonstrated my ability to connect learning to impact and to translate data into action—showcasing Creative problem-solving and Helpful communication for both L&D and executive stakeholders.</p>
+      <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_10.pdf" target="_blank" class="btn">View Full Project</a>
+    </div>
+  </div>
+</section>
 
-    <section class="section">
-      <div class="card">
-        <h3 class="text-3xl font-bold mb-4">Conclusion & Reflection</h3>
-        <p>This portfolio highlights my ability to design engaging and measurable L&D initiatives that align with business goals and improve learner outcomes. Each project reflects my strengths as a Creative, Empathetic, Responsible, Helpful Leader.</p>
-        <p class="mt-2">I’ve learned the importance of strategic alignment and data-driven evaluation in L&D, and I'm committed to roles where I can apply these principles in innovative environments. My next goal is to secure a fulfilling position in L&D by October 31, 2025.</p>
-      </div>
-    </section>
+<section class="section">
+  <div class="card">
+    <h3 class="text-2xl font-bold mb-4">Conclusion & Reflection</h3>
+    <p>Completing this portfolio has been a transformative experience. It has challenged me to apply my prior teaching and business experience to real-world HR and L&D practices in strategic, measurable, and learner-centered ways. I’ve strengthened my skills in digital learning design, performance evaluation, and the use of data analytics to drive L&D decision-making. I’ve also gained practical experience creating instructional content, evaluating platforms, and applying gamification principles to support engagement and knowledge transfer.</p>
+    <p>Most of all, this process has clarified my own values as a learning and development professional. I believe in responsive, data-informed design that centers the learner experience and aligns closely with organizational goals. I value practical learning solutions that are both scalable and flexible. And I strive to create inclusive, supportive environments where learners feel empowered to grow and innovate.</p>
+    <p>As I move forward in my L&D career, I am excited to bring this mindset—and these skills—into roles that combine instructional design, training strategy, performance consulting, and learning technology. I’m passionate about helping others succeed through learning, and this portfolio marks the beginning of that next chapter.</p>
+  </div>
+</section>
+
   </main>
 
   <footer class="bg-white mt-16">
