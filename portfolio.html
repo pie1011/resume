@@ -23,61 +23,12 @@
 <body class="antialiased">
   <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
-        <h1 class="text-xl font-bold text-[#3D405B]">Katie Harshman</h1>
-        <div class="hidden md:flex items-center space-x-8" id="desktop-menu">
-            <a href="index.html#overview" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Overview</a>
-            <a href="index.html#experience" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Experience</a>
-            <a href="index.html#skills" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Skills</a>
-            <a href="index.html#education" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Education</a>
-            <a href="portfolio.html" class="nav-link text-[#20B2AA] border-b-2 border-[#20B2AA] pb-1 font-medium">Portfolio</a>
-            <a href="bridge-builder.html" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Bridge Builder</a>
-            <a href="index.html#contact" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Contact</a>
-        </div>
-        <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-gray-600 focus:outline-none" aria-label="Open menu" aria-expanded="false">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </div>
+      <h1 class="text-xl font-bold text-[#3D405B]">Katie Harshman</h1>
+      <a href="index.html" class="flex items-center text-[#20B2AA] font-medium text-lg hover:underline">
+        <span style="font-size:1.25em; margin-right:0.5em;">&#8592;</span> Back
+      </a>
     </nav>
-    <div id="mobile-menu" class="fixed inset-0 bg-white/95 shadow-lg z-50 flex flex-col items-center justify-start pt-24 space-y-2 text-lg hidden md:hidden transition-all min-h-screen overflow-y-auto">
-        <a href="index.html#overview" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Overview</a>
-        <a href="index.html#experience" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Experience</a>
-        <a href="index.html#skills" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Skills</a>
-        <a href="index.html#education" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Education</a>
-        <a href="portfolio.html" class="block w-full text-center py-2 px-4 text-[#20B2AA] font-medium bg-gray-100">Portfolio</a>
-        <a href="bridge-builder.html" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Bridge Builder</a>
-        <a href="index.html#contact" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Contact</a>
-        <button id="mobile-menu-close" class="absolute top-4 right-6 text-2xl text-gray-600" aria-label="Close menu">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-</header>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-
-    function openMobileMenu() {
-        mobileMenu.classList.remove('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('overflow-hidden');
-    }
-    function closeMobileMenu() {
-        mobileMenu.classList.add('hidden');
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('overflow-hidden');
-    }
-
-    mobileMenuButton.addEventListener('click', openMobileMenu);
-    mobileMenuClose.addEventListener('click', closeMobileMenu);
-
-    // Close menu when clicking any link inside mobile menu
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
-});
-</script>
+  </header>
 
   <main class="container mx-auto px-6 py-12">
     <section class="section">
@@ -150,6 +101,55 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="card-flex">
       <img src="docs/thumbnails/16.png" alt="Gamified Learning Experience thumbnail" class="thumbnail">
       <div class="card-body">
+        <h3 class="text-2xl font-bold">Gamified Learning Experience Design</h3>
+        <p class="subtitle">Case Study: K-edtech Solutions</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Objectives:</strong> This project aimed to boost learner engagement and improve knowledge retention through a gamified learning program for K-edtech Solutions. The goal was to turn passive learning into an interactive, motivating experience, using game design principles to increase course completion rates, enhance skill application, and foster a culture of continuous learning.</p>
+      <p><strong>Processes:</strong> Using an ADDIE-inspired approach, the team conducted a training needs analysis to uncover learner pain points. We designed a custom theme, “The Code Heist,” where learners progressed through challenges framed as missions. Key gamification elements included points (“Mastermind Points”), badges (“Cipher Badges”), trophies, feedback loops, and rank progression from Rookie to Mastermind. Interactive modules and scenario-based coding challenges were created and delivered through a hypothetical LMS that tracked user progress and hosted leaderboards. The design prioritized accessibility, visual engagement, and motivation, using a Creative and Empathetic lens to address learner needs while aligning with organizational goals.</p>
+      <p><strong>Outcomes:</strong> With this proposal, the project could lead to a 25% increase in completion rates and a 15% rise in assessment scores compared to traditional formats. Learners would benefit from immediate feedback, visible progress, and rewards for mastery. The gamified format was designed to promote deeper learning, team engagement, and a more energized company learning culture. These anticipated outcomes reflected a Responsible, Creative, and Helpful solution to a common L&D challenge.</p>
+      <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_8.pdf" target="_blank" class="btn">View Full Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <div class="card-flex">
+      <img src="docs/thumbnails/17.png" alt="Training ROI Report thumbnail" class="thumbnail">
+      <div class="card-body">
+        <h3 class="text-2xl font-bold">Training ROI & Analytics Report</h3>
+        <p class="subtitle">Case Study: VitaCore Health Services</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><strong>Objectives:</strong> This project focused on evaluating the return on investment (ROI) for a new leadership development program at VitaCore Health Services. The goal was to assess the program’s impact on key business outcomes such as productivity, employee retention, and performance, while also identifying opportunities for continuous improvement.</p>
+      <p><strong>Processes:</strong> The analysis applied Kirkpatrick’s Four Levels of Evaluation and Philips’ ROI Methodology. Data sources included participant feedback, pre- and post-assessments, productivity metrics, and retention records. The report also calculated total program costs (including time, coaching, and content development) to determine the financial ROI. Key performance indicators (KPIs) were tracked through dashboards and visualized to support executive reporting. This Responsible and Leader-like approach to analytics ensured alignment with business priorities while supporting a learning culture.</p>
+      <p><strong>Outcomes:</strong> The report estimated a 120% ROI, driven by a 12% increase in team productivity and a projected reduction in turnover by 8%. Feedback scores from managers averaged 4.7/5, and post-training assessments showed a 25% increase in skill proficiency. The findings supported the program’s continuation and informed updates to the coaching model and module design. This project demonstrated my ability to connect learning to impact and to translate data into action—showcasing Creative problem-solving and Helpful communication for both L&D and executive stakeholders.</p>
+      <a href="https://pie1011.github.io/resume/docs/case_study/Summative_Assessment_10.pdf" target="_blank" class="btn">View Full Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h3 class="text-2xl font-bold mb-4">Conclusion & Reflection</h3>
+    <p>Completing this portfolio has been a transformative experience. It has challenged me to apply my prior teaching and business experience to real-world HR and L&D practices in strategic, measurable, and learner-centered ways. I’ve strengthened my skills in digital learning design, performance evaluation, and the use of data analytics to drive L&D decision-making. I’ve also gained practical experience creating instructional content, evaluating platforms, and applying gamification principles to support engagement and knowledge transfer.</p>
+    <p>Most of all, this process has clarified my own values as a learning and development professional. I believe in responsive, data-informed design that centers the learner experience and aligns closely with organizational goals. I value practical learning solutions that are both scalable and flexible. And I strive to create inclusive, supportive environments where learners feel empowered to grow and innovate.</p>
+    <p>As I move forward in my L&D career, I am excited to bring this mindset—and these skills—into roles that combine instructional design, training strategy, performance consulting, and learning technology. I’m passionate about helping others succeed through learning, and this portfolio marks the beginning of that next chapter.</p>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="bg-white mt-16">
+    <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+      <p>&copy; 2025 Katie Harshman | HR & L&D Portfolio Showcase</p>
+    </div>
+  </footer>
+</body>
+</html>
         <h3 class="text-2xl font-bold">Gamified Learning Experience Design</h3>
         <p class="subtitle">Case Study: K-edtech Solutions</p>
       </div>
