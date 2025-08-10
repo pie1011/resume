@@ -23,7 +23,7 @@ This responsive, single-page website is built with HTML and TailwindCSS. It feat
 
 ## 📚 HR L&D Project Portfolio
 
-A separate page is available at [portfolio.html](https://www.katieharshman.com/portfolio.html), showcasing five in-depth project samples related to Human Resources and Learning & Development. Each project includes:
+A separate page is available at [hr-portfolio.html](https://www.katieharshman.com/hr-portfolio.html), showcasing five in-depth project samples related to Human Resources and Learning & Development. Each project includes:
 
 - A detailed overview of objectives, processes, and outcomes  
 - Visual thumbnails and direct links to full PDF case studies  
