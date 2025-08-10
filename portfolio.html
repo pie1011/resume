@@ -22,22 +22,62 @@
 </head>
 <body class="antialiased">
   <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-[#3D405B]">
-          <a href="index.html#overview" class="hover:text-[#20B2AA] transition-colors">
-              Katie Harshman
-          </a>
-      </h1>
-      <div class="space-x-6 hidden md:flex">
-        <a href="index.html#overview" class="text-gray-600 hover:text-[#20B2AA]">Overview</a>
-        <a href="index.html#portfolio" class="text-gray-600 hover:text-[#20B2AA]">Portfolio</a>
-        <a href="index.html#experience" class="text-gray-600 hover:text-[#20B2AA]">Experience</a>
-        <a href="index.html#skills" class="text-gray-600 hover:text-[#20B2AA]">Skills</a>
-        <a href="index.html#education" class="text-gray-600 hover:text-[#20B2AA]">Education</a>
-        <a href="index.html#contact" class="text-gray-600 hover:text-[#20B2AA]">Contact</a>
-      </div>
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+        <h1 class="text-xl font-bold text-[#3D405B]">Katie Harshman</h1>
+        <div class="hidden md:flex items-center space-x-8" id="desktop-menu">
+            <a href="index.html#overview" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Overview</a>
+            <a href="index.html#experience" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Experience</a>
+            <a href="index.html#skills" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Skills</a>
+            <a href="index.html#education" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Education</a>
+            <a href="portfolio.html" class="nav-link text-[#20B2AA] border-b-2 border-[#20B2AA] pb-1 font-medium">Portfolio</a>
+            <a href="bridge-builder.html" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Bridge Builder</a>
+            <a href="index.html#contact" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-600 focus:outline-none" aria-label="Open menu" aria-expanded="false">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
     </nav>
-  </header>
+    <div id="mobile-menu" class="fixed inset-0 bg-white/95 shadow-lg z-50 flex flex-col items-center justify-start pt-24 space-y-2 text-lg hidden md:hidden transition-all min-h-screen overflow-y-auto">
+        <a href="index.html#overview" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Overview</a>
+        <a href="index.html#experience" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Experience</a>
+        <a href="index.html#skills" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Skills</a>
+        <a href="index.html#education" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Education</a>
+        <a href="portfolio.html" class="block w-full text-center py-2 px-4 text-[#20B2AA] font-medium bg-gray-100">Portfolio</a>
+        <a href="bridge-builder.html" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Bridge Builder</a>
+        <a href="index.html#contact" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Contact</a>
+        <button id="mobile-menu-close" class="absolute top-4 right-6 text-2xl text-gray-600" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</header>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+    function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('overflow-hidden');
+    }
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    mobileMenuButton.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+    // Close menu when clicking any link inside mobile menu
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+});
+</script>
 
   <main class="container mx-auto px-6 py-12">
     <section class="section">

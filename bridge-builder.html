@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katie Harshman | Bridge Builder Stories</title>
+  <link rel="stylesheet" href="output.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f4ede8; color: #3D405B; }
+    .section { margin-bottom: 4rem; }
+    .card { background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .story-card { background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 2rem; position: relative; overflow: hidden; transition: all 0.3s ease; }
+    .story-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+    .story-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #20B2AA, #ED7E6F); }
+    .story-title { font-size: 1.5rem; font-weight: bold; color: #3D405B; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .story-icon { background: linear-gradient(135deg, #20B2AA, #ED7E6F); color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
+    .challenge { background: #ffeaa7; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; border-left: 4px solid #fdcb6e; }
+    .solution { background: #a8e6cf; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; border-left: 4px solid #00b894; }
+    .impact { background: #dda0dd; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; border-left: 4px solid #9b59b6; }
+    .label { font-weight: bold; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+    .challenge .label { color: #8b6914; }
+    .solution .label { color: #00a085; }
+    .impact .label { color: #7d4cdb; }
+    .skills-demonstrated { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .skill-badge { background: #e3f2fd; color: #1976d2; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.85rem; font-weight: 500; border: 1px solid #bbdefb; }
+    .cta-section { background: linear-gradient(135deg, #20B2AA 0%, #ED7E6F 100%); color: white; padding: 2rem; border-radius: 1rem; text-align: center; margin-top: 2rem; }
+    .btn { background-color: #20B2AA; color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; transition: background 0.3s; display: inline-block; margin-top: 1rem; }
+    .btn:hover { background-color: #008080; }
+    .story-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px) {
+      .story-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1400px) {
+      .story-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+      <h1 class="text-xl font-bold text-[#3D405B]">
+        <a href="index.html#overview" class="hover:text-[#20B2AA] transition-colors">
+          Katie Harshman
+        </a>
+      </h1>
+      <div class="space-x-6 hidden md:flex" id="desktop-menu">
+        <a href="index.html#overview" class="text-gray-600 hover:text-[#20B2AA]">Overview</a>
+        <a href="index.html#portfolio" class="text-gray-600 hover:text-[#20B2AA]">Portfolio</a>
+        <a href="bridge-builder.html" class="text-[#20B2AA] font-medium">Bridge Builder</a>
+        <a href="index.html#experience" class="text-gray-600 hover:text-[#20B2AA]">Experience</a>
+        <a href="index.html#skills" class="text-gray-600 hover:text-[#20B2AA]">Skills</a>
+        <a href="index.html#education" class="text-gray-600 hover:text-[#20B2AA]">Education</a>
+        <a href="index.html#contact" class="text-gray-600 hover:text-[#20B2AA]">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-600 focus:outline-none" aria-label="Open menu" aria-expanded="false">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="fixed inset-0 bg-white/95 shadow-lg z-50 flex flex-col items-center justify-start pt-24 space-y-2 text-lg hidden md:hidden transition-all min-h-screen overflow-y-auto">
+      <a href="index.html#overview" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Overview</a>
+      <a href="index.html#portfolio" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Portfolio</a>
+      <a href="bridge-builder.html" class="block w-full text-center py-2 px-4 text-[#20B2AA] font-medium bg-gray-100">Bridge Builder</a>
+      <a href="index.html#experience" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Experience</a>
+      <a href="index.html#skills" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Skills</a>
+      <a href="index.html#education" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Education</a>
+      <a href="index.html#contact" class="block w-full text-center py-2 px-4 text-gray-700 hover:bg-gray-100">Contact</a>
+      <button id="mobile-menu-close" class="absolute top-4 right-6 text-2xl text-gray-600" aria-label="Close menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-12">
+    <section class="section">
+      <div class="card">
+        <h2 class="text-4xl font-bold text-center mb-4">🌉 Bridge Builder Stories</h2>
+        <h3 class="text-xl text-center text-gray-600 mb-6">Real examples of connecting technical solutions with human needs</h3>
+        <div class="text-gray-700 text-lg">
+          <p>Throughout my career, I've consistently found myself in roles where I translate between different worlds - technical and business, complex and simple, theory and practice. These stories showcase how I bridge gaps to create solutions that work for both systems and people.</p>
+          <p class="mt-4">Rather than just listing skills, these examples demonstrate how I apply my diverse background to solve real problems that require both technical understanding and human insight. Each story follows a Challenge-Solution-Impact format to show concrete results from my bridge-building approach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Begin responsive grid for stories -->
+    <section class="section">
+      <div class="story-grid" style="display: grid; gap: 2rem;">
+        <div class="story-card">
+          <div class="story-title">
+            <div class="story-icon">🔧</div>
+            Technical Documentation Transformation at IBM
+          </div>
+          
+          <div class="challenge">
+            <div class="label">Challenge</div>
+            <p>At IBM, acquired company's technical documentation didn't match IBM's style standards, creating confusion for internal teams and external users accessing critical AI/Data tools. The manual conversion process was time-intensive and prone to inconsistencies.</p>
+          </div>
+          
+          <div class="solution">
+            <div class="label">My Bridge Solution</div>
+            <p>I created a Python script that automated the conversion process while ensuring human readability. This required understanding both the technical requirements of the documentation system AND the user experience needs of Content Designers who would use these tools daily. I combined programming skills with documentation standards knowledge and UX thinking.</p>
+          </div>
+          
+          <div class="impact">
+            <div class="label">Business Impact</div>
+            <p>Streamlined documentation consistency across teams, reduced manual conversion time by approximately 80%, and improved accessibility for Content Designers using the tools. The automation allowed the team to focus on higher-value work while maintaining quality standards.</p>
+          </div>
+          
+          <div class="skills-demonstrated">
+            <span class="skill-badge">Python Programming</span>
+            <span class="skill-badge">Technical Writing</span>
+            <span class="skill-badge">Process Automation</span>
+            <span class="skill-badge">User Experience</span>
+            <span class="skill-badge">Cross-team Collaboration</span>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">
+            <div class="story-icon">👥</div>
+            Developer Team Leadership at IBM
+          </div>
+          
+          <div class="challenge">
+            <div class="label">Challenge</div>
+            <p>IBM's Developer Jumpstart program needed someone to lead two 8-person teams creating advanced workshop materials for the Drone 2.0 project. This required coordinating technical content creation while ensuring the materials would be effective for diverse learning styles and skill levels.</p>
+          </div>
+          
+          <div class="solution">
+            <div class="label">My Bridge Solution</div>
+            <p>I applied my teaching background to break down complex technical concepts while using project management skills to coordinate team efforts across multiple time zones. I translated between technical requirements and practical workshop delivery, ensuring the content was both technically accurate and pedagogically sound.</p>
+          </div>
+          
+          <div class="impact">
+            <div class="label">Business Impact</div>
+            <p>Successfully delivered workshop materials that enabled other developers to learn advanced concepts efficiently. Received recognition from Program Manager Duncan Cowell for demonstrating "passion, compassion, and enthusiasm" in supporting transformative learning experiences for both teams.</p>
+          </div>
+          
+          <div class="skills-demonstrated">
+            <span class="skill-badge">Team Leadership</span>
+            <span class="skill-badge">Technical Instruction</span>
+            <span class="skill-badge">Project Coordination</span>
+            <span class="skill-badge">Curriculum Development</span>
+            <span class="skill-badge">Remote Collaboration</span>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">
+            <div class="story-icon">💼</div>
+            Business-Tech Integration at Pro Appliance Installation
+          </div>
+          
+          <div class="challenge">
+            <div class="label">Challenge</div>
+            <p>As co-founder of Pro Appliance Installation, we needed to streamline client intake and enhance our online presence while managing complex scheduling, dispatch, and customer communication workflows. The business required both digital solutions and operational efficiency.</p>
+          </div>
+          
+          <div class="solution">
+            <div class="label">My Bridge Solution</div>
+            <p>I designed and maintained the company website while developing business procedures that integrated digital tools with field operations. I connected technical web development capabilities with real business needs, ensuring the online experience translated to seamless service delivery and satisfied customers.</p>
+          </div>
+          
+          <div class="impact">
+            <div class="label">Business Impact</div>
+            <p>Created a cohesive client experience from initial web contact through service completion. The integrated systems I built continue to support the business today - it remains successful and profitable with efficient operations and strong customer satisfaction ratings.</p>
+          </div>
+          
+          <div class="skills-demonstrated">
+            <span class="skill-badge">Web Development</span>
+            <span class="skill-badge">Business Strategy</span>
+            <span class="skill-badge">Process Design</span>
+            <span class="skill-badge">Customer Experience</span>
+            <span class="skill-badge">Operations Management</span>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">
+            <div class="story-icon">🎓</div>
+            Adult Learning Program Design at ThriveDX
+          </div>
+          
+          <div class="challenge">
+            <div class="label">Challenge</div>
+            <p>Teaching software development to adult learners through university partners required adapting complex technical curricula for students with varying backgrounds and learning styles. Many students were career changers with limited programming experience but strong motivation to succeed.</p>
+          </div>
+          
+          <div class="solution">
+            <div class="label">My Bridge Solution</div>
+            <p>I combined my technical programming knowledge with adult learning principles to create engaging, accessible instruction. I used interactive breakout rooms, hands-on coding exercises, and real-world project examples to connect abstract programming concepts to practical applications students could relate to.</p>
+          </div>
+          
+          <div class="impact">
+            <div class="label">Business Impact</div>
+            <p>Successfully guided multiple cohorts through comprehensive full-stack development programs, maintaining high engagement and completion rates. Students consistently provided positive feedback on the clarity of instruction and practical applicability of lessons, with many successfully transitioning to developer roles.</p>
+          </div>
+          
+          <div class="skills-demonstrated">
+            <span class="skill-badge">Technical Instruction</span>
+            <span class="skill-badge">Curriculum Development</span>
+            <span class="skill-badge">Adult Learning</span>
+            <span class="skill-badge">Programming (MERN Stack)</span>
+            <span class="skill-badge">Remote Teaching</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End responsive grid for stories -->
+
+    <section class="section">
+      <div class="cta-section">
+        <h3 class="text-2xl font-bold mb-4">The Common Thread</h3>
+        <p class="text-lg">In every role, I excel at seeing how technical capabilities can solve real human problems. I don't just implement solutions - I ensure they work for the people who use them, whether that's developers learning new skills, customers navigating software, teams coordinating complex projects, or businesses optimizing their operations.</p>
+        <p class="mt-4 text-lg">This ability to bridge domains - technical and business, complex and accessible, individual and organizational - is what makes me uniquely valuable in hybrid roles that require both depth and breadth.</p>
+        <a href="index.html#contact" class="btn mt-6">Let's Connect</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white mt-16">
+    <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+      <p>&copy; 2025 Katie Harshman | Bridge Builder Stories</p>
+    </div>
+  </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+  function openMobileMenu() {
+    mobileMenu.classList.remove('hidden');
+    mobileMenuButton.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('overflow-hidden');
+  }
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  mobileMenuButton.addEventListener('click', openMobileMenu);
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+  // Close menu when clicking any link inside mobile menu
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+});
+</script>
+</body>
+</html>
