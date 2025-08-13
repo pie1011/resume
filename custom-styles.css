@@ -1,0 +1,160 @@
+/* Custom styles for Katie Harshman Portfolio Site */
+/* This file should be included on all pages after output.css */
+
+/* Preserve existing page-specific styles */
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #dae7ee; 
+    color: #3D405B; 
+}
+
+.section { 
+    margin-bottom: 4rem; 
+}
+
+.card { 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 1rem; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}
+
+.card-flex { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1.5rem; 
+}
+
+.thumbnail { 
+    flex: 0 0 220px; 
+    max-width: 220px; 
+    border-radius: 0.5rem; 
+    object-fit: cover; 
+}
+
+.card-body { 
+    flex: 1; 
+    min-width: 280px; 
+}
+
+.btn { 
+    background-color: #20B2AA; 
+    color: white; 
+    padding: 0.5rem 1rem; 
+    border-radius: 0.5rem; 
+    text-decoration: none; 
+    transition: background 0.3s; 
+    display: inline-block; 
+    margin-top: 1rem; 
+}
+
+.btn:hover { 
+    background-color: #008080; 
+}
+
+.subtitle { 
+    color: #6B7280; 
+    font-size: 0.875rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.card h3 { 
+    margin-top: 0.5rem; 
+}
+
+.card p { 
+    margin-bottom: 0.75rem; 
+}
+
+/* Additional utilities needed for buttons and layout */
+.px-6 { 
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem; 
+}
+
+.py-2 { 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+}
+
+.rounded-full { 
+    border-radius: 9999px; 
+}
+
+.font-medium { 
+    font-weight: 500; 
+}
+
+.font-bold { 
+    font-weight: 700; 
+}
+
+.text-center { 
+    text-align: center; 
+}
+
+.transition-colors { 
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; 
+}
+
+.mt-8 { 
+    margin-top: 2rem; 
+}
+
+.mb-4 { 
+    margin-bottom: 1rem; 
+}
+
+.scroll-mt-24 { 
+    scroll-margin-top: 6rem; 
+}
+
+.text-white { 
+    color: #ffffff; 
+}
+
+.underline { 
+    text-decoration: underline; 
+}
+
+.hover\:bg-\[#008080\]:hover { 
+    background-color: #008080; 
+}
+
+.hover\:bg-\[#d43754\]:hover { 
+    background-color: #d43754; 
+}
+
+.hover\:text-\[#20B2AA\]:hover { 
+    color: #20B2AA; 
+}
+
+.hover\:text-\[#008080\]:hover { 
+    color: #008080; 
+}
+
+.hover\:text-\[#d43754\]:hover { 
+    color: #d43754; 
+}
+
+/* Specific background color utilities */
+.bg-\[#ff4f6f\] {
+    background-color: #ff4f6f;
+}
+
+.bg-\[#20B2AA\] {
+    background-color: #20B2AA;
+}
+
+.text-\[#3D405B\] {
+    color: #3D405B;
+}
+
+.text-\[#20B2AA\] {
+    color: #20B2AA;
+}
+
+.text-\[#ff4f6f\] {
+    color: #ff4f6f;
+}
+
