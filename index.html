@@ -702,70 +702,88 @@
                     pmProjects.push(project);
                 }
             });
-            // Helper to render cards
-            function renderPortfolioCards(projects, container) {
-                projects.forEach((project, idx) => {
-                    const projectCard = document.createElement('div');
-                    projectCard.className = 'bg-white p-6 rounded-xl shadow-md flex flex-col';
-                    // Accent color logic
-                    let accent, hover;
-                    if (project.category === 'HR Learning & Development') {
-                        accent = 'ff4f6f'; hover = 'd43754'; // Coral
-                    } else if (project.category === 'Web Development') {
-                        accent = '3498DB'; hover = '217DBB'; // Blue
-                    } else {
-                        accent = '20B2AA'; hover = '008080'; // Teal
-                    }
-                    // Button rendering logic for web dev cards
-                    let buttonsHtml = '';
-                    if (project.githubUrl) {
-                        buttonsHtml = `
-                            <div class="mt-auto flex gap-2">
-                                <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
-                                   class="flex-1 inline-block bg-gray-800 text-white text-center py-2 px-4 rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center">
-                                    <i class="fab fa-github mr-2"></i>GitHub
-                                </a>
-                                <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
-                                   class="flex-1 inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors flex items-center justify-center">
-                                    View Site <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </div>
-                        `;
-                    } else {
-                        buttonsHtml = `
-                            <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
-                               class="mt-auto inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors">
-                                View Full Project <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>
-                        `;
-                    }
-                    // HR L&D subhead logic
-                    let subhead = '';
-                    if (project.category === 'HR Learning & Development') {
-                        let hrLabel = '';
-                        let color = '#3D405B'; // dark blue
-                        // Use the index within the HR projects array to determine the label
-                        // First 5: Precision Installations Co., rest: K-edtech Solutions
-                        if (container === portfolioContainerHR) {
-                            hrLabel = (idx < 5)
-                                ? 'Case Study: Precision Installations Co.'
-                                : 'Case Study: K-edtech Solutions';
-                        }
-                        subhead = `<div class="text-sm font-semibold mb-1" style="color:${color}">${hrLabel}</div>`;
-                    }
-                    projectCard.innerHTML = `
-                        <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer">
-                            <img src="${project.thumbnailUrl}" alt="${project.title} - ${project.category} project showcase by Katie Harshman" class="mb-4 rounded-lg object-cover w-full h-56 hover:opacity-80 transition-opacity">
-                        </a>
-                        ${subhead}
-                        <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
-                        <p class="text-sm text-gray-500 mb-4">${project.category}</p>
-                        <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
-                        ${buttonsHtml}
-                    `;
-                    container.appendChild(projectCard);
-                });
+// Helper to render cards
+function renderPortfolioCards(projects, container) {
+    projects.forEach((project, idx) => {
+        const projectCard = document.createElement('div');
+        
+        // Check if this is the first Web Development project (featured)
+        const isFeatured = project.category === 'Web Development' && idx === 0;
+        
+        projectCard.className = isFeatured 
+            ? 'bg-white p-6 rounded-xl shadow-lg border-2 border-[#3498DB] flex flex-col relative' 
+            : 'bg-white p-6 rounded-xl shadow-md flex flex-col';
+        
+        // Accent color logic
+        let accent, hover;
+        if (project.category === 'HR Learning & Development') {
+            accent = 'ff4f6f'; hover = 'd43754'; // Coral
+        } else if (project.category === 'Web Development') {
+            accent = '3498DB'; hover = '217DBB'; // Blue
+        } else {
+            accent = '20B2AA'; hover = '008080'; // Teal
+        }
+        
+        // Featured banner
+        const featuredBanner = isFeatured ? `
+            <div class="absolute -top-3 -right-3 bg-gradient-to-r from-[#3498DB] to-[#217DBB] text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg transform rotate-12">
+                ✨ Featured Project
+            </div>
+        ` : '';
+        
+        // Button rendering logic for web dev cards
+        let buttonsHtml = '';
+        if (project.githubUrl) {
+            buttonsHtml = `
+                <div class="mt-auto flex gap-2">
+                    <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"
+                       class="flex-1 inline-block bg-gray-800 text-white text-center py-2 px-4 rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center">
+                        <i class="fab fa-github mr-2"></i>GitHub
+                    </a>
+                    <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
+                       class="flex-1 inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors flex items-center justify-center">
+                        View Site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            `;
+        } else {
+            buttonsHtml = `
+                <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer"
+                   class="mt-auto inline-block bg-[#${accent}] text-white text-center py-2 px-4 rounded-md hover:bg-[#${hover}] transition-colors">
+                    View Full Project <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            `;
+        }
+        
+        // HR L&D subhead logic
+        let subhead = '';
+        if (project.category === 'HR Learning & Development') {
+            let hrLabel = '';
+            let color = '#3D405B'; // dark blue
+            // Use the index within the HR projects array to determine the label
+            // First 5: Precision Installations Co., rest: K-edtech Solutions
+            if (container === portfolioContainerHR) {
+                hrLabel = (idx < 5)
+                    ? 'Case Study: Precision Installations Co.'
+                    : 'Case Study: K-edtech Solutions';
             }
+            subhead = `<div class="text-sm font-semibold mb-1" style="color:${color}">${hrLabel}</div>`;
+        }
+        
+        projectCard.innerHTML = `
+            ${featuredBanner}
+            <a href="${project.pdfUrl}" target="_blank" rel="noopener noreferrer">
+                <img src="${project.thumbnailUrl}" alt="${project.title} - ${project.category} project showcase by Katie Harshman" class="mb-4 rounded-lg object-cover w-full h-56 hover:opacity-80 transition-opacity">
+            </a>
+            ${subhead}
+            <h4 class="font-bold text-xl mb-2 text-[#3D405B]">${project.title}</h4>
+            <p class="text-sm text-gray-500 mb-4">${project.category}</p>
+            <p class="text-gray-600 flex-grow mb-4">${project.description}</p>
+            ${buttonsHtml}
+        `;
+        container.appendChild(projectCard);
+    });
+}
             renderPortfolioCards(pmProjects, portfolioContainerPM);
             renderPortfolioCards(hrProjects, portfolioContainerHR);
             renderPortfolioCards(webProjects, portfolioContainerWeb);
